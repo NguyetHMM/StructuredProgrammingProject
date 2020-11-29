@@ -1,0 +1,6 @@
+{
+    "AccountModule": true,
+    "ProductModule": true,
+    "OrderModule": true,
+    "PaymentModule": true
+}
