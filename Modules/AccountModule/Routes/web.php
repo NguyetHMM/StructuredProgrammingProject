@@ -12,5 +12,22 @@
 */
 
 Route::prefix('accountmodule')->group(function() {
+
     Route::get('/', 'AccountModuleController@index');
+
+    Route::get('/register', 'AccountModuleController@register')->name('register');
+    Route::post('/register', 'AccountModuleController@storeUser');
+
+    Route::get('/login', 'AccountModuleController@login')->name('login');
+    Route::post('/login', 'AccountModuleController@authenticate');
+
+    // Route::get('/showUserInfor', 'AccountModuleController@showUserInfor')->name('showUserInfor');
+
+    Route::get('/editUserInfor', 'AccountModuleController@editUserInfor')->name('editUserInfor');
+    Route::post('/editUserInfor', 'AccountModuleController@storeEditUserInfor');
+
+    Route::get('logout', 'AccountModuleController@logout')->name('logout');
+
+    Route::get('/home', 'AccountModuleController@home')->name('home');
+
 });
