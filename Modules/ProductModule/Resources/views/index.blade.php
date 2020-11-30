@@ -6,4 +6,5 @@
     <p>
         This view is loaded from module: {!! config('productmodule.name') !!}
     </p>
+    
 @endsection
