@@ -6,74 +6,79 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 
+// use App\Http\Controllers\Controller;
+use App\User;
+use Auth;
+use Hash;
+
 class AccountModuleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
-    public function index()
-    {
-        return view('accountmodule::index');
+    
+    public function register(){
+            return view('accountmodule::register');
+          }
+      
+    public function storeUser(Request $request)
+        {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+            'password_confirmation' => 'required',
+        ]);
+      
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+           return redirect('home');
+        }
+
+    public function login(){
+        return view('accountmodule::login');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Renderable
-     */
-    public function create()
-    {
-        return view('accountmodule::create');
+    public function authenticate(Request $request)
+        {
+        $request->validate([
+            'email' => 'required|string|email',
+            'password' => 'required|string',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            return redirect()->intended('home');
+        }
+
+        return redirect('login')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
+    public function editUserInfor(){
+        return view('accountmodule::editUserInfor');
     }
 
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('accountmodule::show');
+    public function storeEditUserInfor(Request $request){
+        User::where('email',Auth::user()->email)
+        ->update([
+            'name'=>$request->name,
+            'phonenumber'=>$request->phonenumber,
+            'dateofbirth'=>$request->dateofbirth
+        ]);
+        Auth::user()->phonenumber = $request->phonenumber;
+        Auth::user()->dateofbirth = $request->dateofbirth;
+    
+        return redirect(route('editUserInfor'))->with('error', 'Oppes! You have entered invalid credentials');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('accountmodule::edit');
+    public function logout(){
+        Auth::logout();
+        return redirect('login');
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
+    public function home(){
+        return view('index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
