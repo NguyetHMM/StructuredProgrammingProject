@@ -18,4 +18,7 @@ Route::prefix('productmodule')->group(function() {
     Route::get('/add-category-product', 'CategoryProductController@add_category_product')->name('add-category-product');
     Route::get('/all-category-product', 'CategoryProductController@all_category_product')->name('all-category-product');
     Route::post('/save-category-product', 'CategoryProductController@save_category_product')->name('save-category-product');
+
+    Route::get('/unactive-category-product/{category_product_id}', 'CategoryProductController@unactive_category_product');
+    Route::get('/active-category-product/{category_product_id}', 'CategoryProductController@active_category_product');
 });

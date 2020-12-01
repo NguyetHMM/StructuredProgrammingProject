@@ -15,7 +15,7 @@ class CategoryProductController extends Controller
      */
     public function index()
     {
-        return view('productmodule::admin.dashboard');
+        return view('productmodule::admin');
     }
 
     public function add_category_product(){
@@ -25,8 +25,9 @@ class CategoryProductController extends Controller
     public function all_category_product(){
         $all_category_product = DB::table('tbl_category_product')->get();
         $manager_category_product = view('productmodule::admin.all_category_product')->with('all_category_product', $all_category_product);
-        return view('productmodule::admin.dashboard')->with('all_category_product', $manager_category_product); 
+        return view('productmodule::admin')->with('all_category_product', $manager_category_product); 
     }
+
 
     public function save_category_product(Request $request){
         $data = array();
@@ -35,7 +36,20 @@ class CategoryProductController extends Controller
         $data['category_status'] = $request->category_product_status;
         
         $add_category = DB::table('tbl_category_product')->insert($data);
-        return view('productmodule::admin.all_category_product');       
+        $all_category_product = DB::table('tbl_category_product')->get();
+        return view('productmodule::admin.all_category_product')->with('all_category_product',$all_category_product);       
+    }
+
+    public function unactive_category_product($category_product_id){
+        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>0]);
+        $all_category_product = DB::table('tbl_category_product')->get();
+        return view('productmodule::admin.all_category_product')->with('all_category_product', $all_category_product);
+    }
+
+    public function active_category_product($category_product_id){
+        DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>1]);
+        $all_category_product = DB::table('tbl_category_product')->get();
+        return view('productmodule::admin.all_category_product')->with('all_category_product', $all_category_product);
     }
 
 

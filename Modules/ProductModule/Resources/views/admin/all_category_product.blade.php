@@ -37,7 +37,7 @@
                     </th>
                     <th>Tên danh mục</th>
                     <th>Hiển thị/Ẩn</th>
-                    <th>Ngày thêm</th>
+                    <th>Chỉnh sửa</th>
                     <th style="width:30px;"></th>
                 </tr>
                 </thead>
@@ -49,16 +49,23 @@
                     <td><span class="text-ellipsis">
                         <?php
                         if($cate_pro->category_status==0){
-                            echo 'Ẩn';
-                        }
-                        else{
-                            echo 'Hiển thị';
-                        }
                         ?>
+                        <a href="{{URL::to('/productmodule/active-category-product/'.$cate_pro->category_id)}}">
+                            <span class = "fa-thumb-styling fa fa-thumbs-down"></span></a>
+                        
+                        <?php
+                        }else{
+                        ?>
+                        <a href="{{URL::to('/productmodule/unactive-category-product/'.$cate_pro->category_id)}}">
+                            <span class = "fa-thumb-styling fa fa-thumbs-up"></span></a>
+                        <?php } ?>
                         
                     </span></td>
                     <td>
-                    <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                    <a href="" class="active" ui-toggle-class="">
+                        <i class="fa fa-pencil-square-o text-success text-active" style="margin-right: 20px"></i>
+                        <i class="fa fa-times text-danger text"></i>
+                    </a>
                     </td>
                 </tr>
                     @endforeach
