@@ -13,7 +13,7 @@
                 <option value="2">Bulk edit</option>
                 <option value="3">Export</option>
                 </select>
-                <button class="btn btn-sm btn-default">Apply</button>                
+            <button  class="btn btn-sm btn-default">Apply</button>                
             </div>
             <div class="col-sm-4">
             </div>
@@ -37,7 +37,7 @@
                     </th>
                     <th>Tên danh mục</th>
                     <th>Hiển thị/Ẩn</th>
-                    <th>Chỉnh sửa</th>
+                    <th>Sửa/Xóa</th>
                     <th style="width:30px;"></th>
                 </tr>
                 </thead>
@@ -62,8 +62,9 @@
                         
                     </span></td>
                     <td>
-                    <a href="" class="active" ui-toggle-class="">
-                        <i class="fa fa-pencil-square-o text-success text-active" style="margin-right: 20px"></i>
+                    <a href="{{URL::to('/productmodule/edit-category-product/'.$cate_pro->category_id)}}" class="active" ui-toggle-class="">
+                        <i class="fa fa-pencil-square-o text-success text-active" style="margin-right: 20px"></i></a>
+                    <a onclick="return confirm('Bạn có muốn xóa sản phẩm này không?')" href="{{URL::to('/productmodule/delete-category-product/'.$cate_pro->category_id)}}" class="active" ui-toggle-class="">
                         <i class="fa fa-times text-danger text"></i>
                     </a>
                     </td>
