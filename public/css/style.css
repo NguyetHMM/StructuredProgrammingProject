@@ -9,6 +9,15 @@ h1, h2, h3 {margin: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
 
+span.fa-thumb-styling.fa.fa-thumbs-down{
+    font-size: 28px;
+    color: red;
+}
+span.fa-thumb-styling.fa.fa-thumbs-up{
+    font-size: 28px;
+    color: green;
+}
+
 html, body{
 	font-family: 'Roboto', sans-serif;
     font-size: 100%;
