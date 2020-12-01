@@ -6,13 +6,11 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Session;
 
 class CategoryProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
     public function index()
     {
         return view('productmodule::admin');
@@ -35,21 +33,21 @@ class CategoryProductController extends Controller
         $data['category_desc'] = $request->category_product_desc;
         $data['category_status'] = $request->category_product_status;
         
-        $add_category = DB::table('tbl_category_product')->insert($data);
-        $all_category_product = DB::table('tbl_category_product')->get();
-        return view('productmodule::admin.all_category_product')->with('all_category_product',$all_category_product);       
+        DB::table('tbl_category_product')->insert($data);
+        Session::put('message','Thêm danh mục sản phẩm thành công');
+        return \redirect()->action([CategoryProductController::class, 'add_category_product']);       
     }
 
     public function unactive_category_product($category_product_id){
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>0]);
-        $all_category_product = DB::table('tbl_category_product')->get();
-        return view('productmodule::admin.all_category_product')->with('all_category_product', $all_category_product);
+        Session::put('message','Hủy kích hoạt danh mục sản phẩm thành công');
+        return \redirect()->action([CategoryProductController::class, 'all_category_product']);
     }
 
     public function active_category_product($category_product_id){
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update(['category_status'=>1]);
-        $all_category_product = DB::table('tbl_category_product')->get();
-        return view('productmodule::admin.all_category_product')->with('all_category_product', $all_category_product);
+        Session::put('message','Kích hoạt danh mục sản phẩm thành công');
+        return \redirect()->action([CategoryProductController::class, 'all_category_product']);
     }
 
     public function edit_category_product($category_product_id){
@@ -61,8 +59,8 @@ class CategoryProductController extends Controller
 
     public function delete_category_product($category_product_id){
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->delete();
-        $all_category_product = DB::table('tbl_category_product')->get();
-        return view('productmodule::admin.all_category_product')->with('all_category_product',$all_category_product);
+        Session::put('message','Xóa danh mục sản phẩm thành công');
+        return \redirect()->action([CategoryProductController::class, 'all_category_product']);
     }
 
     public function update_category_product(Request $request, $category_product_id){
@@ -70,8 +68,8 @@ class CategoryProductController extends Controller
         $data['category_name'] = $request->category_product_name;
         $data['category_desc'] = $request->category_product_desc;
         DB::table('tbl_category_product')->where('category_id', $category_product_id)->update($data);
-        $all_category_product = DB::table('tbl_category_product')->get();
-        return view('productmodule::admin.all_category_product')->with('all_category_product',$all_category_product);
+        Session::put('message','Chỉnh sửa danh mục sản phẩm thành công');
+        return \redirect()->action([CategoryProductController::class, 'all_category_product']);
     }
 
 }
