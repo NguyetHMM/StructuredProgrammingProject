@@ -62,7 +62,6 @@
             }
 
             a {
-        
                 color: #636B6F;
                 text-decoration: none;
                 background-color: transparent;
@@ -77,7 +76,6 @@
         </style>
     </head>
     <body>
-
 
     <header>
   <div class="container">
@@ -134,17 +132,17 @@
             @endif -->
 
             <div class="container">
-                <div class="row align-items-center">
-                <div class="col-12 col-md-6 mb-4 mb-md-0">
-                    <img alt="image" class="img-fluid" src="{{asset('images/mainimg.jpg')}}">
-                </div>
-                <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
-                <h1><b>ENTITITI</b></h1>
+                  <div class="row align-items-center">
+                    <div class="col-12 col-md-6 mb-4 mb-md-0">
+                      <img alt="image" class="img-fluid" src="{{asset('images/mainimg.jpg')}}">
+                    </div>
+                  <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
+                    <h1><b>ENTITITI</b></h1>
                     <p class="lead">E-comerce Website By Entititi Team</p>
                     <p><a class="btn btn-secondary mt-4" href="{{ route('login') }}">Shop Now</a></p>
-                </div>
-                </div>
+                  </div>
             </div>
+          </div>
         </div>
     </body>
 </html>

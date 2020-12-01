@@ -21,6 +21,51 @@
 
     </head>
     <body>
+    <style>
+        .btn-primary {
+            color: #fff;
+            background-color: #636b6f;
+            border-color: #636b6f;
+        }
+        
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -18px;
+            margin-left: 5px;
+        }
+        
+        .col-form-label {
+            margin-left: 4%;
+            margin-right: -6%;
+            padding-top: calc(.375rem + 1px);
+            padding-bottom: calc(.375rem + 1px);
+            margin-bottom: 0;
+            font-size: inherit;
+            line-height: 1.5;
+        }
+        
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-bottom: 1.5rem;
+            font-family: sans-serif;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #636b6f;
+        }
+    </style>
         @yield('content')
 
         {{-- Laravel Mix - JS File --}}
