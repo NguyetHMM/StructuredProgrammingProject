@@ -226,19 +226,19 @@
 							<td colspan="2">
 								<table class="table table-condensed total-result">
 									<tr>
-										<td>Cart Sub Total</td>
+										<td>Tổng</td>
 										<td>$59</td>
 									</tr>
 									<tr>
-										<td>Exo Tax</td>
+										<td>Thuế</td>
 										<td>$2</td>
 									</tr>
 									<tr class="shipping-cost">
-										<td>Shipping Cost</td>
+										<td>Phí vận chuyển</td>
 										<td>Free</td>										
 									</tr>
 									<tr>
-										<td>Total</td>
+										<td>Thành tiền</td>
 										<td><span>$61</span></td>
 									</tr>
 								</table>
