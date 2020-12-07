@@ -1,4 +1,4 @@
-@extends('productmodule::admin')
+@extends('admin')
 @section('admin_content')
     <div class="table-agile-info">
         <div class="panel panel-default">

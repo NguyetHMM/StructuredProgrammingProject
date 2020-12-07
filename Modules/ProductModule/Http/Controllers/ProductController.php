@@ -15,7 +15,7 @@ class ProductController extends Controller
     {
         return view('productmodule::admin');
     }
-
+    
     public function add_product(){
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get();
