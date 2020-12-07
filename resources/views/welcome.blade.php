@@ -81,7 +81,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-md no-gutters fixed-top ">
       <div class="col-3 text-left">
-        <a href="{{ url('/home') }}">
+        <a href="{{ route('all-brand-product') }}">
           <img src="{{asset('images/logo.png')}}" height="100" alt="image">
         </a>
       </div>
@@ -92,7 +92,7 @@
       <div class="collapse navbar-collapse navbar-collapse-2 justify-content-center col-md-6" id="navbarNav7">
         <ul class="navbar-nav justify-content-center">
           <li class="nav-item active">
-            <a class="nav-link" href="{{ url('/home') }}"><h5>Home</h5><span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ route('all-brand-product')  }}"><h5>Home</h5><span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href=""><h5>Contact</h5></a>
@@ -138,8 +138,8 @@
                     </div>
                   <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
                     <h1><b>ENTITITI</b></h1>
-                    <p class="lead">E-comerce Website By Entititi Team</p>
-                    <p><a class="btn btn-secondary mt-4" href="{{ route('login') }}">Shop Now</a></p>
+                    <p class="lead">E-commerce Website By Entititi Team</p>
+                    <p><a class="btn btn-secondary mt-4" href="{{ route('all-brand-product') }}">Shop Now</a></p>
                   </div>
             </div>
           </div>

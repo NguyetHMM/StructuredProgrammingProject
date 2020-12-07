@@ -22,6 +22,9 @@
     </head>
     <body>
     <style>
+        body{
+            background-color:#fcfcfc;
+        }
         .btn-primary {
             color: #fff;
             background-color: #636b6f;
@@ -65,6 +68,10 @@
             line-height: 1.2;
             color: #636b6f;
         }
+        .navbar-nav .nav-link {
+    padding-left: 30px;
+}
+}
     </style>
         @yield('content')
 
