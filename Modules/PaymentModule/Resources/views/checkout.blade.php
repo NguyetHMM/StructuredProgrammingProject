@@ -99,7 +99,7 @@
 			</div>
 			<div class="shopper-informations">
 				<div class="row">
-					<div class="col-sm-5 clearfix">
+					<div class="col-sm-8 clearfix">
 						<div class="bill-to">
 							<p>Điền thông tin gửi hàng</p>
 							<div class="form-one">
