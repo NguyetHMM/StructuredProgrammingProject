@@ -1,86 +1,80 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Entititi</title>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link type="text/css" rel="stylesheet" href="css/froala_blocks.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <style>
-        html,
-        body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links>a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-
-        a {
-            color: #636B6F;
-            text-decoration: none;
-            background-color: transparent;
-        }
-
-        .btn-primary {
-            color: #fff;
-            background-color: #636B6F;
-            border-color: #636B6F;
+        .fdb-block {
+            border-bottom: 1px solid var(--light);
         }
 
     </style>
 </head>
 
 <body>
+    <style>
+        body {
+            background-color: #fcfcfc;
+        }
 
+        .btn-primary {
+            color: #fff;
+            background-color: #636b6f;
+            border-color: #636b6f;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            margin-right: -18px;
+            margin-left: 5px;
+        }
+
+        .col-form-label {
+            margin-left: 4%;
+            margin-right: -6%;
+            padding-top: calc(.375rem + 1px);
+            padding-bottom: calc(.375rem + 1px);
+            margin-bottom: 0;
+            font-size: inherit;
+            line-height: 1.5;
+        }
+
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        a {
+            margin-bottom: 1.5rem;
+            font-family: sans-serif;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #636b6f;
+        }
+
+        .navbar-nav .nav-link {
+            padding-left: 60px;
+        }
+        }
+
+    </style>
+    @yield('content')
     <header>
         <div class="container">
             <nav class="navbar navbar-expand-md no-gutters fixed-top ">
@@ -117,29 +111,16 @@
                 <div class="collapse navbar-collapse navbar-collapse-2" , style="margin-right:5%">
                     <ul class="navbar-nav ml-auto justify-content-end">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Log In</a>
+                            <label for="name" >{{ __('Hello ') }}</label>
+                            <label for="name" >{{ Auth::user()->name }}</label>
                         </li>
                     </ul>
 
-                    <a class="btn btn-primary ml-md-1" href="{{ route('register') }}">Register</a>
+                    <a class="btn btn-primary ml-md-1" href="{{ route('logout') }}">Log Out</a>
                 </div>
             </nav>
         </div>
     </header>
-
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-12 col-md-6 mb-4 mb-md-0">
-                <img alt="image" class="img-fluid" src="{{ asset('images/mainimg.jpg') }}">
-            </div>
-            <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
-                <h1><b>ENTITITI</b></h1>
-                <p class="lead">E-commerce Website By Entititi Team</p>
-                <p><a class="btn btn-secondary mt-4" href="{{ route('all-brand-product') }}">Shop Now</a></p>
-            </div>
-        </div>
-    </div>
-    </div>
 </body>
 
 </html>

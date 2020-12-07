@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-        <title>Module AccountModule</title>
 
-       {{-- Laravel Mix - CSS File --}}
-       {{-- <link rel="stylesheet" href="{{ mix('css/accountmodule.css') }}"> --}}
-       <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<head>
+    <title>Entititi</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <link type="text/css" rel="stylesheet" href="css/froala_blocks.css">
@@ -18,19 +14,20 @@
             border-bottom: 1px solid var(--light);
         }
     </style>
+</head>
 
-    </head>
-    <body>
+<body>
     <style>
-        body{
-            background-color:#fcfcfc;
+        body {
+            background-color: #fcfcfc;
         }
+
         .btn-primary {
             color: #fff;
             background-color: #636b6f;
             border-color: #636b6f;
         }
-        
+
         .row {
             display: -ms-flexbox;
             display: flex;
@@ -39,7 +36,7 @@
             margin-right: -18px;
             margin-left: 5px;
         }
-        
+
         .col-form-label {
             margin-left: 4%;
             margin-right: -6%;
@@ -49,7 +46,7 @@
             font-size: inherit;
             line-height: 1.5;
         }
-        
+
         .h1,
         .h2,
         .h3,
@@ -61,21 +58,67 @@
         h3,
         h4,
         h5,
-        h6 {
+        h6,
+        a {
             margin-bottom: 1.5rem;
             font-family: sans-serif;
             font-weight: 500;
             line-height: 1.2;
             color: #636b6f;
         }
-        .navbar-nav .nav-link {
-    padding-left: 30px;
-}
-}
-    </style>
-        @yield('content')
 
-        {{-- Laravel Mix - JS File --}}
-        {{-- <script src="{{ mix('js/accountmodule.js') }}"></script> --}}
-    </body>
+        .navbar-nav .nav-link {
+            padding-left: 60px;
+        }
+        }
+
+    </style>
+    @yield('content')
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-md no-gutters fixed-top ">
+                <div class="col-3 text-left">
+                    <a href="{{ route('all-brand-product') }}">
+                        <img src="{{ asset('images/logo.png') }}" height="100" alt="image">
+                    </a>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse-2"
+                    aria-controls="navbarNav7" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse navbar-collapse-2 justify-content-center col-md-6" id="navbarNav7">
+                    <ul class="navbar-nav justify-content-center">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{{ route('all-brand-product') }}">
+                                <h5>Home</h5><span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                <h5>Contact</h5>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                <h5>Team</h5>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-collapse-2" , style="margin-right:5%">
+                    <ul class="navbar-nav ml-auto justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Log In</a>
+                        </li>
+                    </ul>
+
+                    <a class="btn btn-primary ml-md-1" href="{{ route('register') }}">Register</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+</body>
+
 </html>
