@@ -84,7 +84,7 @@
         <a href="{{ route('all-brand-product') }}">
           <img src="{{asset('images/logo.png')}}" height="100" alt="image">
         </a>
-      </div>
+      </div>e
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse-2" aria-controls="navbarNav7" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
