@@ -145,6 +145,14 @@
 						</tr>
 					</thead>
 					<tbody>
+						<?php
+						$cost_cart = 0
+						?>
+						@foreach ($products as $val)
+						 <?php 
+						 	$total = $val->price * $val->quantity;
+							$cost_cart += $total
+						 ?>
 						<tr>
 							<td class="cart_product">
 								<a href=""><img src="{{asset('payment/images/cart/one.png')}}" alt=""></a>
@@ -154,24 +162,21 @@
 								<p>Web ID: 1089772</p>
 							</td>
 							<td class="cart_price">
-								<p>$59</p>
+								<p>{{$val->price}}</p>
 							</td>
 							<td class="cart_quantity">
-								<div class="cart_quantity_button">
-									<a class="cart_quantity_up" href=""> + </a>
-									<input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-									<a class="cart_quantity_down" href=""> - </a>
-								</div>
+								<p>{{$val->quantity}}</p>
 							</td>
 							<td class="cart_total">
-								<p class="cart_total_price">$59</p>
+								<p>{{$total}}</p>
 							</td>
-							<td class="cart_delete">
+							<!--<td class="cart_delete">
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-							</td>
+							</td>-->
 						</tr>
+						@endforeach
 
-						<tr>
+						<!-- <tr>
 							<td class="cart_product">
 								<a href=""><img src="{{asset('payment/images/cart/two.png')}}" alt=""></a>
 							</td>
@@ -221,25 +226,26 @@
 								<a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
 							</td>
 						</tr>
-						<tr>
+						<tr> -->
 							<td colspan="4">&nbsp;</td>
 							<td colspan="2">
 								<table class="table table-condensed total-result">
 									<tr>
 										<td>Tổng</td>
-										<td>$59</td>
+										<td>{{$cost_cart}}</td>
 									</tr>
-									<tr>
+									<!--<tr>
 										<td>Thuế</td>
 										<td>$2</td>
-									</tr>
+									</tr>-->
 									<tr class="shipping-cost">
 										<td>Phí vận chuyển</td>
 										<td>Free</td>										
 									</tr>
 									<tr>
 										<td>Thành tiền</td>
-										<td><span>$61</span></td>
+										<!--<td><span>$61</span></td>-->
+										<td>{{$cost_cart}}</td>
 									</tr>
 								</table>
 							</td>
