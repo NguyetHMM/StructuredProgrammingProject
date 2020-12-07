@@ -13,4 +13,5 @@
 
 Route::prefix('paymentmodule')->group(function() {
     Route::get('/', 'PaymentModuleController@index');
+    Route::get('/checkout','PaymentModuleController@show');
 });
