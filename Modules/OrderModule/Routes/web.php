@@ -12,5 +12,8 @@
 */
 
 Route::prefix('ordermodule')->group(function() {
-    Route::get('/', 'OrderModuleController@index');
+    Route::get('/', 'OrderModuleController@index')->name('index-2'); 
+    Route::get('/order','OrderModuleController@show')->name('showOrder');
+    Route::post('/order','OrderModuleController@addToCart')->name('addToCart');
+    Route::get('/productDetail','OrderModuleController@show_detail');
 });

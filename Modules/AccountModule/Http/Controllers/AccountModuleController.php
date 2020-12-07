@@ -78,7 +78,7 @@ class AccountModuleController extends Controller
     }
 
     public function home(){
-        return view('index');
+        return view('accountmodule::index');
     }
 
 }

@@ -137,7 +137,7 @@
                       <img alt="image" class="img-fluid" src="{{asset('images/mainimg.jpg')}}">
                     </div>
                   <div class="col-12 col-md-6 col-lg-5 ml-md-auto text-left">
-                    <h1><b>ENTITITI</b></h1>
+                    <h1><b>ENTITY</b></h1>
                     <p class="lead">E-comerce Website By Entititi Team</p>
                     <p><a class="btn btn-secondary mt-4" href="{{ route('login') }}">Shop Now</a></p>
                   </div>
