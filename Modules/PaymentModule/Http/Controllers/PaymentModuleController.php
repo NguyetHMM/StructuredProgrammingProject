@@ -46,7 +46,7 @@ class PaymentModuleController extends Controller
     {
         $data_product = DB::table('order_detail')->where('order_id','1')->get();
         foreach ($data_product as $value) {
-            print_r($value);
+            
         }
         return view('paymentmodule::checkout')->with('products', $data_product);
     }
