@@ -16,5 +16,5 @@ Route::prefix('ordermodule')->group(function() {
     Route::get('/order','OrderModuleController@show')->name('showOrder');
     Route::post('/order','OrderModuleController@addToCart')->name('addToCart');
     Route::post('/order-update','OrderModuleController@updateCart')->name('updateCart');
-    Route::get('/productDetail','OrderModuleController@show_detail');
+    Route::get('/productDetail/{product_id}','OrderModuleController@show_detail');
 });

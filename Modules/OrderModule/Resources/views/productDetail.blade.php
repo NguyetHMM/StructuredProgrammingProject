@@ -444,9 +444,9 @@ _________________________________________________________ -->
         </div>
 
         <!-- *** LOGIN MODAL END *** -->
-        @foreach ($all_product as $key => $pro)
+        @foreach ($show_detail as $key => $pro)
         
-       <div id="heading-breadcrumbs">
+        <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
@@ -463,7 +463,7 @@ _________________________________________________________ -->
 
                     <!-- *** BODY CONTENT ***
 		    _________________________________________________________ -->
-                    @foreach ($all_product as $key => $pro)
+                    @foreach ($show_detail as $key => $pro)
                         
                     
                     <div >

@@ -248,13 +248,13 @@ _________________________________________________________ -->
                             <div class="col-md-4 col-sm-6">
                                 <div class="product">
                                     <div class="image">
-                                        <a href="{{URL::to('ordermodule/productDetail')}}">
+                                        <a href="{{URL::to('ordermodule/productDetail/'.$pro->product_id)}}">
                                             <img src = "{{ asset('products/'.$pro->product_image) }}" alt="" class="img-responsive image1">
                                         </a>
                                     </div>
                                     <!-- /.image -->
                                     <div class="text">
-                                        <h3><a href="{{URL::to('ordermodule/productDetail')}}">{{ $pro->product_name }}</a>
+                                        <h3><a href="{{URL::to('ordermodule/productDetail/'.$pro->product_id)}}">{{ $pro->product_name }}</a>
                                         </h3>
                                         <p class="price">{{ $pro->product_price }}</p>
                                         <p class="buttons">

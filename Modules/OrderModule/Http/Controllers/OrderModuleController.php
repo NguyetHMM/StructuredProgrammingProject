@@ -67,14 +67,9 @@ class OrderModuleController extends Controller
     public function updateCart(){
         return view('ordermodule::index');
     }
-    public function show_detail(){
-        $cate_product = DB::table('tbl_category_product')->where('category_status','1')->orderby('category_id','desc')->get();
-        $brand_product = DB::table('tbl_brand')->where('brand_status','1')->orderby('brand_id','desc')->get();
-        $all_product = DB::table('tbl_product')->where('product_status','1')->orderby('tbl_product.product_id','desc')->get();
-
-        return view('ordermodule::productDetail')->with('all_product', $all_product)
-        ->with('category', $cate_product)
-        ->with('brand', $brand_product);
+    public function show_detail($product_id){
+        $product = DB::table('tbl_product')->where('product_id',$product_id)->get();
+        return view('ordermodule::productDetail')->with('show_detail', $product);
     }
 
     /**
