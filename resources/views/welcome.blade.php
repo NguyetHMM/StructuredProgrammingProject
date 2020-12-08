@@ -97,7 +97,7 @@
                 <div class="collapse navbar-collapse navbar-collapse-2 justify-content-center col-md-6" id="navbarNav7">
                     <ul class="navbar-nav justify-content-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('all-brand-product') }}">
+                            <a class="nav-link" href="">
                                 <h5>Home</h5><span class="sr-only">(current)</span>
                             </a>
                         </li>
@@ -128,7 +128,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <div class="container" style="margin-top:10%">
         <div class="row align-items-center">
             <div class="col-12 col-md-6 mb-4 mb-md-0">
                 <img alt="image" class="img-fluid" src="{{ asset('images/mainimg.jpg') }}">
