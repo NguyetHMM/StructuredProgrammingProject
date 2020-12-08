@@ -444,29 +444,18 @@ _________________________________________________________ -->
         </div>
 
         <!-- *** LOGIN MODAL END *** -->
-
+        @foreach ($all_product as $key => $pro)
+        
        <div id="heading-breadcrumbs">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>White Blouse Armani</h1>
-                    </div>
-                    <div class="col-md-5">
-                        <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
-                            </li>
-                            <li><a href="shop-category.html">Ladies</a>
-                            </li>
-                            <li><a href="shop-category.html">Tops</a>
-                            </li>
-                            <li>White Blouse Armani</li>
-                        </ul>
-
+                        <h1>{{$pro->product_name}}</h1>
                     </div>
                 </div>
             </div>
         </div>
-
+        @endforeach
         <div id="content">
             <div class="container">
 
@@ -474,30 +463,23 @@ _________________________________________________________ -->
 
                     <!-- *** BODY CONTENT ***
 		    _________________________________________________________ -->
-
+                    @foreach ($all_product as $key => $pro)
+                        
+                    
                     <div >
                         <div class="row" id="productMain">
                             <div class="col-sm-4">
                                 <div id="mainImage">
-                                    <img src="{{asset('Order/images/detailbig1.jpg')}}" alt="" class="img-responsive" style="height: auto;">
+                                    <img src="{{ asset('products/'.$pro->product_image) }}" alt="" class="img-responsive" style="height: auto;">
                                 </div>
 
-                                <div class="ribbon sale">
-                                    <div class="theribbon">SALE</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
                                 <!-- /.ribbon -->
-
-                                <div class="ribbon new">
-                                    <div class="theribbon">NEW</div>
-                                    <div class="ribbon-background"></div>
-                                </div>
                                 <!-- /.ribbon -->
                             </div>
                             <div  class="col-sm-4" id="details">
                                 <p>
                                     <h4>Product details</h4>
-                                    <p>White lace top, woven, has a round neck, short sleeves, has knitted lining attached</p>
+                                    <p>{{ $pro->product_desc }}</p>
                                     <h4>Material & care</h4>
                                     <ul>
                                         <li>Polyester</li>
@@ -518,21 +500,13 @@ _________________________________________________________ -->
                                 <form action="{{route('addToCart')}}" method="POST">
                                     {{ csrf_field() }}
                                     <div class="text-center">
-
-                                        <h3>Available sizes</h3>
-                                        <input type="radio" id="size_s" name="size" value="s" class="size-input">
-                                        <label for="size_s"><strong>S</strong></label>
-                                        <input type="radio" id="size_m" name="size" value="m" class="size-input" style="margin-left: 20px;">
-                                        <label for="size_m" ><strong>M</strong></label>
-                                        <input type="radio" id="size_l" name="size" value="l" class="size-input" style="margin-left: 20px;">
-                                        <label for="size_l"><strong>L</strong></label><br><br>
                                         <label for="quantity" class="text-center" style="margin-right: 3%;"><strong>Quantity</strong></label>
                                         <input type="number" id="quantity" name="product_qty" value="1" style="width: 3%;">
                                     </div>
                                     <input type="hidden" value="124" name="price">   
                                     <input type="hidden" value="3" name="product_id">
                                     <!-- <input type="hidden" value="{{asset('')}}">      -->
-                                    <p class="price">$124.00</p>
+                                    <p class="price">{{$pro->product_price}}</p>
 
                                     <p class="text-center" >
                                         <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> Add to cart</button>
@@ -546,8 +520,10 @@ _________________________________________________________ -->
                         </div>
 
 
-                        
+                    
                     </div> 
+                    @endforeach  
+                </div>
         <!-- *** FOOTER ***
 _________________________________________________________ -->
 

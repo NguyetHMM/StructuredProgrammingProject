@@ -135,6 +135,7 @@ class AccountModuleController extends Controller
         Session::put('message','User Role Changed To Admin Successfully !');
         return \redirect()->action([AccountModuleController::class, 'all_user']);
     }
+    
     public function cancelAdminRole($user_id){
         DB::table('users')->where('id', $user_id)->update(['role_id'=>1]);
         Session::put('message','Admin Role Canceled !');

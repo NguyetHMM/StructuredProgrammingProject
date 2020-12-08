@@ -52,13 +52,13 @@
                         <?php
                         if($user->role_id==0){
                         ?>
-                        <a href="{{URL::to('/accountmodule/changeUserRoleToAdmin/'.$user->id)}}">
+                        <a href="{{URL::to('/accountmodule/cancelAdminRole/'.$user->id)}}">
                             <span>Admin</span></a>
                         
                         <?php
                         }else{
                         ?>
-                        <a href="{{URL::to('/accountmodule/cancelAdminRole/'.$user->id)}}">
+                        <a href="{{URL::to('/accountmodule/changeUserRoleToAdmin/'.$user->id)}}">
                             <span>User</span></a>
                         <?php } ?>
                         
