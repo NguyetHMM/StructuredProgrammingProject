@@ -13,7 +13,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('productmodule::admin');
+        return view('admin');
     }
     
     public function add_product(){
@@ -87,7 +87,7 @@ class ProductController extends Controller
         $manager_product = view('productmodule::admin.edit_product')->with('edit_product', $edit_product)
         ->with('cate_product', $cate_product)
         ->with('brand_product', $brand_product);
-        return view('productmodule::admin')->with('edit_product', $manager_product);
+        return view('admin')->with('edit_product', $manager_product);
     }
 
     public function delete_product($product_id){

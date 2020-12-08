@@ -71,14 +71,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div id="sidebar" class="nav-collapse">
         <!-- sidebar menu start-->
         <div class="leftside-navigation">
-            <ul class="sidebar-menu" id="nav-accordion">
-                <li>
-                    <a class="active" href="{{route('admin-layout')}}">
-                        <i class="fa fa-dashboard"></i>
-                        <span>Dashboard</span>
-                    </a>
-                </li>
-                
+            <ul class="sidebar-menu" id="nav-accordion">				           
                 <li class="sub-menu">
                     <a href="javascript:;">
                         <i class="fa fa-book"></i>
@@ -108,7 +101,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="{{route('add-product')}}">Thêm sản phẩm</a></li>
 						<li><a href="{{route('all-product')}}">Liệt kê sản phẩm</a></li>
                     </ul>
-                </li>
+				</li>
+				
 			</ul>            
 		</div>
         <!-- sidebar menu end-->
