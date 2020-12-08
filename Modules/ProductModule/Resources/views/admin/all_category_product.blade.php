@@ -69,9 +69,12 @@
                         
                     </span></td>
                     <td>
-                    <a href="{{URL::to('/productmodule/edit-category-product/'.$cate_pro->category_id)}}" class="active" ui-toggle-class="">
+                    <a href="{{URL::to('/productmodule/edit-category-product/'.$cate_pro->category_id)}}" 
+                        class="active" ui-toggle-class="">
                         <i class="fa fa-pencil-square-o text-success text-active" style="margin-right: 20px"></i></a>
-                    <a onclick="return confirm('Bạn có muốn xóa sản phẩm này không?')" href="{{URL::to('/productmodule/delete-category-product/'.$cate_pro->category_id)}}" class="active" ui-toggle-class="">
+                    <a onclick="return confirm('Bạn có muốn xóa sản phẩm này không?')" 
+                    href="{{URL::to('/productmodule/delete-category-product/'.$cate_pro->category_id)}}" 
+                    class="active" ui-toggle-class="">
                         <i class="fa fa-times text-danger text"></i>
                     </a>
                     </td>
