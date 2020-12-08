@@ -66,7 +66,7 @@
                     <td>
 
                     <a onclick="return confirm('Bạn có muốn xóa user này không?')"
-                     href="{{URL::to('/accountmodule/delete_user/'.$user->id)}}" class="active" ui-toggle-class="">
+                     href="{{URL::to('/accountmodule/delete-user/'.$user->id)}}" class="active" ui-toggle-class="">
                         <i class="fa fa-times text-danger text"></i>
                     </a>
                     </td>
