@@ -34,7 +34,7 @@ class ProductController extends Controller
         // dd($all_product);  
 
         $manager_product = view('productmodule::admin.all_product')->with('all_product', $all_product);
-        return view('productmodule::admin')->with('all_product', $manager_product); 
+        return view('admin')->with('all_product', $manager_product); 
     }
 
 
