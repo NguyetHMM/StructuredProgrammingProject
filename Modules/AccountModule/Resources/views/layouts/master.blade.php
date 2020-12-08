@@ -71,6 +71,7 @@
             padding-left: 60px;
         }
         }
+        
 
     </style>
     @yield('content')
@@ -78,7 +79,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-md no-gutters fixed-top ">
                 <div class="col-3 text-left">
-                    <a href="{{ route('all-brand-product') }}">
+                    <a href="">
                         <img src="{{ asset('images/logo.png') }}" height="100" alt="image">
                     </a>
                 </div>
@@ -90,7 +91,7 @@
                 <div class="collapse navbar-collapse navbar-collapse-2 justify-content-center col-md-6" id="navbarNav7">
                     <ul class="navbar-nav justify-content-center">
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('all-brand-product') }}">
+                            <a class="nav-link" href="">
                                 <h5>Home</h5><span class="sr-only">(current)</span>
                             </a>
                         </li>
