@@ -52,13 +52,13 @@
                         <?php
                         if($user->role_id==0){
                         ?>
-                        <a href="{{URL::to('/accountmodule/changeUserRoleToAdmin/'.$user->id)}}">
+                        <a href="{{URL::to('/accountmodule/cancelAdminRole/'.$user->id)}}">
                             <span>Admin</span></a>
                         
                         <?php
                         }else{
                         ?>
-                        <a href="{{URL::to('/accountmodule/cancelAdminRole/'.$user->id)}}">
+                        <a href="{{URL::to('/accountmodule/changeUserRoleToAdmin/'.$user->id)}}">
                             <span>User</span></a>
                         <?php } ?>
                         
@@ -66,7 +66,7 @@
                     <td>
 
                     <a onclick="return confirm('Bạn có muốn xóa user này không?')"
-                     href="{{URL::to('/accountmodule/delete_user/'.$user->id)}}" class="active" ui-toggle-class="">
+                     href="{{URL::to('/accountmodule/delete-user/'.$user->id)}}" class="active" ui-toggle-class="">
                         <i class="fa fa-times text-danger text"></i>
                     </a>
                     </td>
