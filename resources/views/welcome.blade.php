@@ -123,6 +123,7 @@
 
                     <a class="btn btn-primary ml-md-1" href="{{ route('register') }}">Register</a>
                 </div>
+
             </nav>
         </div>
     </header>
