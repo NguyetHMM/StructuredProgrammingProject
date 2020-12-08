@@ -157,19 +157,7 @@ _________________________________________________________ -->
         </header>
         <div id="heading-breadcrumbs">
             <div class="container">
-                {{-- <div class="row"> --}}
-                    {{-- <div class="col-md-7"> --}}
-                        {{-- <h1>Category with left sidebar</h1> --}}
-                    {{-- </div> --}}
-                    {{-- <div class="col-md-5"> --}}
-                        {{-- <ul class="breadcrumb"> --}}
-                            {{-- <li><a href="index.html">Home</a> --}}
-                            {{-- </li> --}}
-                            {{-- <li>Category with left sidebar</li> --}}
-                        {{-- </ul> --}}
-
-                    {{-- </div> --}}
-                {{-- </div> --}}
+ 
             </div>
         </div>
 
@@ -260,13 +248,13 @@ _________________________________________________________ -->
                             <div class="col-md-4 col-sm-6">
                                 <div class="product">
                                     <div class="image">
-                                        <a href="#">
+                                        <a href="{{URL::to('ordermodule/productDetail')}}">
                                             <img src = "{{ asset('products/'.$pro->product_image) }}" alt="" class="img-responsive image1">
                                         </a>
                                     </div>
                                     <!-- /.image -->
                                     <div class="text">
-                                        <h3><a href="#">{{ $pro->product_name }}</a>
+                                        <h3><a href="{{URL::to('ordermodule/productDetail')}}">{{ $pro->product_name }}</a>
                                         </h3>
                                         <p class="price">{{ $pro->product_price }}</p>
                                         <p class="buttons">
