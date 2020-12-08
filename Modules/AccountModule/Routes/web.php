@@ -21,8 +21,6 @@ Route::prefix('accountmodule')->group(function() {
     Route::get('/login', 'AccountModuleController@login')->name('login');
     Route::post('/login', 'AccountModuleController@authenticate');
 
-    // Route::get('/showUserInfor', 'AccountModuleController@showUserInfor')->name('showUserInfor');
-
     Route::get('/editUserInfor', 'AccountModuleController@editUserInfor')->name('editUserInfor');
     Route::post('/editUserInfor', 'AccountModuleController@storeEditUserInfor');
 

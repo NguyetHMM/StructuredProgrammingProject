@@ -1,4 +1,4 @@
-@extends('productmodule::admin')
+@extends('admin')
 @section('admin_content')
     <div class="table-agile-info">
         <div class="panel panel-default">
@@ -58,9 +58,9 @@
                     <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                     <td>{{ $pro->product_name }}</td>
                     <td>{{ $pro->product_price }}</td>
-                    <td>{{ $pro->product_image }}</td>
-                    <td>{{ $pro->category_id }}</td>
-                    <td>{{ $pro->brand_id }}</td>
+                    <td><img style="width: 100px; height: 70px" src = "{{ asset('products/'.$pro->product_image) }}"></td>
+                    <td>{{ $pro->category_name }}</td>
+                    <td>{{ $pro->brand_name }}</td>
                     <td><span class="text-ellipsis">
                         <?php
                         if($pro->product_status==0){
