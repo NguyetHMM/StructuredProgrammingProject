@@ -128,7 +128,7 @@ _________________________________________________________ -->
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img src="img/template-easy-customize.png" class="img-responsive hidden-xs" alt="">
+                                                        <img src="{{asset('Order/images/template-easy-customize.png')}}" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <h5>Shortcodes</h5>
@@ -174,7 +174,7 @@ _________________________________________________________ -->
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img src="img/template-homepage.png" class="img-responsive hidden-xs" alt="">
+                                                        <img src="{{asset('Order/images/template-homepage.png')}}" class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <h5>Portfolio</h5>
@@ -488,11 +488,15 @@ _________________________________________________________ -->
                                         </thead>
                                         <tbody>
                                         <?php
-                                            $total = 0
+                                            $total = 0;
+                                            $countProduct = 0;
+                                            $totalOrder = 0
                                         ?>
                                         @foreach ($products as $key => $value)
                                         <?php
-                                            $total += $value->price*$value->quantity
+                                            $countProduct+=1;
+                                            $total += $value->price*$value->quantity;
+                                            $totalOrder+=$total;
                                         ?>
                                             <tr>
                                                 <td>
@@ -505,11 +509,11 @@ _________________________________________________________ -->
                                                 
                                                 <?php $cost = $value->quantity*$value->price ?>
                                                 <td>
-                                                    <input type="number" value="{{$value->quantity}}" class="form-control" min="0">
+                                                    <input type="number" value="{{$value->quantity}}" class="{{"form-control number_select" . $key}}" min="0" >
                                                 </td> 
-                                                <td>${{$value->price}}</td>
+                                                <td id="{{'product-price'.$key}}">{{$value->price}}</td>
                                                 <td>$0.00</td>
-                                                <td>${{$cost}}</td>
+                                                <td id="{{'cost-product'.$key}}">{{$total}}</td>
                                                 <td><a href=""><i class="fa fa-trash-o"></i></a>
                                                 </td>
                                             </tr>
@@ -519,7 +523,7 @@ _________________________________________________________ -->
                                         <tfoot>
                                             <tr>
                                                 <th colspan="5"><strong>Total</strong></th>
-                                                <th colspan="2"><strong>${{$total}}</strong></th>
+                                                <th colspan="2" id="totalOrder"><strong>{{$totalOrder}}</strong></th>
                                             </tr>
                                         </tfoot>
                                     </table>
@@ -530,7 +534,6 @@ _________________________________________________________ -->
                                         <a href="shop-category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                                     </div>
                                     <div class="pull-right">
-                                        <button class="btn btn-default"><i class="fa fa-refresh"></i> Update cart</button>
                                         <button type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
                                         </button>
                                     </div>
@@ -552,28 +555,28 @@ _________________________________________________________ -->
                                 <?php
                                     $shipandhanding = 10;
                                     $tax = 0;
-                                    $total2=$shipandhanding+$tax+$total
+                                    $total2=$shipandhanding+$tax+$totalOrder
                                 ?>
                                 <table class="table">
                                     <tbody>
                                         <tr>
                                             <td>Order subtotal</td>
-                                            <th>${{$total}}</th>
+                                            <th>{{$totalOrder}}</th>
                                         </tr>
                                         <tr>
                                             
                                             <td>Shipping and handling</td>
-                                            <th>${{$shipandhanding}}</th>
+                                            <th>{{$shipandhanding}}</th>
                                         </tr>
                                         <tr>
                                             
                                             <td>Tax</td>
-                                            <th>${{$tax}}</th>
+                                            <th>{{$tax}}</th>
                                         </tr>
                                         <tr class="total">
                                             
                                             <td>Total</td>
-                                            <th>${{$total2}}</th>
+                                            <th id="total-summary">{{$total2}}</th>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -650,8 +653,19 @@ _________________________________________________________ -->
                     <div class="blog-entries">
                         <div class="item same-height-row clearfix">
                             <div class="image same-height-always">
+                                <a href="">
+                                    <img class="img-responsive" src="{{asset('Order/images/detailsquare.jpg')}}" alt="">
+                                </a>
+                            </div>
+                            <div class="name same-height-always">
+                                <h5><a href="">Blog post name</a></h5>
+                            </div>
+                        </div>
+
+                        <div class="item same-height-row clearfix">
+                            <div class="image same-height-always">
                                 <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
+                                    <img class="img-responsive" src="{{asset('Order/images/detailsquare.jpg')}}" alt="">
                                 </a>
                             </div>
                             <div class="name same-height-always">
@@ -662,18 +676,7 @@ _________________________________________________________ -->
                         <div class="item same-height-row clearfix">
                             <div class="image same-height-always">
                                 <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="name same-height-always">
-                                <h5><a href="#">Blog post name</a></h5>
-                            </div>
-                        </div>
-
-                        <div class="item same-height-row clearfix">
-                            <div class="image same-height-always">
-                                <a href="#">
-                                    <img class="img-responsive" src="img/detailsquare.jpg" alt="">
+                                    <img class="img-responsive" src="{{asset('Order/images/detailsquare.jpg')}}" alt="">
                                 </a>
                             </div>
                             <div class="name same-height-always">
@@ -719,11 +722,33 @@ _________________________________________________________ -->
     </script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-    <script src="js/jquery.cookie.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/jquery.counterup.min.js"></script>
-    <script src="js/jquery.parallax-1.1.3.js"></script>
-    <script src="js/front.js"></script>
+    <script src="{{asset('Order/js/jquery.cookie.js')}}"></script>
+    <script src="{{asset('Order/js/waypoints.min.js')}}"></script>
+    <script src="{{asset('Order/js/jquery.counterup.min.js')}}"></script>
+    <script src="{{asset('Order/js/jquery.parallax-1.1.3.js')}}"></script>
+    <script src="{{asset('Order/js/front.js')}}"></script>
+
+    <script>
+         $(function() {
+            $(':input[type="number"]').click(function () {
+                
+                var totalOrder= 0;
+                var product_number = '<?php echo $countProduct; ?>';
+                for(var i=0;i<product_number;i++){
+                    let price = parseInt($('.number_select'+i).val()) * parseInt($('#product-price'+i).html());
+                    $('#cost-product'+i).html(price);
+                    totalOrder+=price;
+                }
+                console.log(product_number);
+                
+                $('#totalOrder').html(totalOrder);
+                var tax = '<?php echo $tax?>';
+                var shipandhanding = '<?php echo $shipandhanding?>';
+                var totalSummary = tax+shipandhanding;
+                $('#total-summary').html(totalSummary);
+            });
+        });
+	</script>
 </body>
 
 </html>
