@@ -82,7 +82,9 @@ class AccountModuleController extends Controller
     }
 
     public function home(){
+
         return redirect()->route('trang-chu');
+
     }
 }
 
