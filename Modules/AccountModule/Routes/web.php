@@ -21,13 +21,19 @@ Route::prefix('accountmodule')->group(function() {
     Route::get('/login', 'AccountModuleController@login')->name('login');
     Route::post('/login', 'AccountModuleController@authenticate');
 
-    // Route::get('/showUserInfor', 'AccountModuleController@showUserInfor')->name('showUserInfor');
-
     Route::get('/editUserInfor', 'AccountModuleController@editUserInfor')->name('editUserInfor');
     Route::post('/editUserInfor', 'AccountModuleController@storeEditUserInfor');
 
     Route::get('logout', 'AccountModuleController@logout')->name('logout');
 
     Route::get('/home', 'AccountModuleController@home')->name('home');
+
+    // Quan ly nguoi dung
+    Route::get('/all-user', 'AccountModuleController@all_user')->name('all-user');
+ 
+    Route::get('/changeUserRoleToAdmin/{user_id}', 'AccountModuleController@changeUserRoleToAdmin');
+    Route::get('/cancelAdminRole/{user_id}', 'AccountModuleController@cancelAdminRole');
+
+    Route::get('/delete-user/{user_id}', 'AccountModuleController@delete_user');
 
 });

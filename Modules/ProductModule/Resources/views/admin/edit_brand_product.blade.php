@@ -1,4 +1,4 @@
-@extends('productmodule::admin')
+@extends('admin')
 @section('admin_content')
     
 

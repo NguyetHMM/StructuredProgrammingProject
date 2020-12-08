@@ -14,6 +14,8 @@
 Route::prefix('productmodule')->group(function() {
     Route::get('/', 'ProductModuleController@index')->name('trang-chu');
     Route::get('/admin', 'AdminController@index')->name('admin-layout');
+    Route::get('/home','ProductModuleController@home')->name('home');
+
     //Category Product
     Route::get('/add-category-product', 'CategoryProductController@add_category_product')->name('add-category-product');
     Route::get('/all-category-product', 'CategoryProductController@all_category_product')->name('all-category-product');

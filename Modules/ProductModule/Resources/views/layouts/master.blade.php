@@ -12,7 +12,8 @@
     </head>
     <body>
         @yield('content')
-        <a href = "{{route('admin-layout')}}" >Admin layout</a>
+        <a href = "{{route('admin-layout')}}" >Admin layout</a><br>
+        <a href = "{{route('home')}}" >User layout</a>
         {{-- Laravel Mix - JS File --}}
         {{-- <script src="{{ mix('js/productmodule.js') }}"></script> --}}
     </body>

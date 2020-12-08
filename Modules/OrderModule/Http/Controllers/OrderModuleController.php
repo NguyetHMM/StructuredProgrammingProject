@@ -5,7 +5,9 @@ namespace Modules\OrderModule\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
+use Session;
 class OrderModuleController extends Controller
 {
     /**
@@ -41,9 +43,33 @@ class OrderModuleController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function show()
     {
-        return view('ordermodule::show');
+        return view('ordermodule::showOrderForm');
+    }
+
+    public function addToCart(Request $request)
+    {
+        // Handle save to database 
+        $data_product = DB::table('order_detail')->where('order_id','1')->get();
+        // $data['product_id'] = $request->product_id;
+        // $data['order_id'] = $request->product_id;
+        // $data['price'] = $request->price;
+        // $data['quantity'] = $request->product_qty;
+        // $data['size'] = $request->size;
+        // dd($data);
+        // foreach($data_product as $data1){
+        //     dd($data1->quantity);
+        // }
+        return view('ordermodule::showOrderForm')->with('products', $data_product);
+    }
+
+    public function updateCart(){
+        return view('ordermodule::index');
+    }
+    public function show_detail($product_id){
+        $product = DB::table('tbl_product')->where('product_id',$product_id)->get();
+        return view('ordermodule::productDetail')->with('show_detail', $product);
     }
 
     /**

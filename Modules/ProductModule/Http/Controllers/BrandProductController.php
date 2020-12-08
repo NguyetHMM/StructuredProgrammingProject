@@ -13,7 +13,7 @@ class BrandProductController extends Controller
 {
     public function index()
     {
-        return view('productmodule::admin');
+        return view('admin');
     }
 
     public function add_brand_product(){
@@ -23,7 +23,7 @@ class BrandProductController extends Controller
     public function all_brand_product(){
         $all_brand_product = DB::table('tbl_brand')->get();
         $manager_brand_product = view('productmodule::admin.all_brand_product')->with('all_brand_product', $all_brand_product);
-        return view('productmodule::admin')->with('all_brand_product', $manager_brand_product); 
+        return view('admin')->with('all_brand_product', $manager_brand_product); 
     }
 
 
@@ -54,7 +54,7 @@ class BrandProductController extends Controller
         $edit_brand_product = DB::table('tbl_brand')->where('brand_id', $brand_product_id)->get();
         
         $manager_brand_product = view('productmodule::admin.edit_brand_product')->with('edit_brand_product', $edit_brand_product);
-        return view('productmodule::admin')->with('edit_brand_product', $manager_brand_product);
+        return view('admin')->with('edit_brand_product', $manager_brand_product);
     }
 
     public function delete_brand_product($brand_product_id){

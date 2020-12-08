@@ -13,7 +13,7 @@ class CategoryProductController extends Controller
 {
     public function index()
     {
-        return view('productmodule::admin');
+        return view('admin');
     }
 
     public function add_category_product(){
@@ -22,8 +22,9 @@ class CategoryProductController extends Controller
 
     public function all_category_product(){
         $all_category_product = DB::table('tbl_category_product')->get();
-        $manager_category_product = view('productmodule::admin.all_category_product')->with('all_category_product', $all_category_product);
-        return view('productmodule::admin')->with('all_category_product', $manager_category_product); 
+        $manager_category_product = view('productmodule::admin.all_category_product')
+        ->with('all_category_product', $all_category_product);
+        return view('admin')->with('all_category_product', $manager_category_product); 
     }
 
 
@@ -54,7 +55,7 @@ class CategoryProductController extends Controller
         $edit_category_product = DB::table('tbl_category_product')->where('category_id', $category_product_id)->get();
         
         $manager_category_product = view('productmodule::admin.edit_category_product')->with('edit_category_product', $edit_category_product);
-        return view('productmodule::admin')->with('edit_category_product', $manager_category_product);
+        return view('admin')->with('edit_category_product', $manager_category_product);
     }
 
     public function delete_category_product($category_product_id){

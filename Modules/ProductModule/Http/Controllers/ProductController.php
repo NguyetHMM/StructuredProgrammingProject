@@ -13,9 +13,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('productmodule::admin');
+        return view('admin');
     }
-
+    
     public function add_product(){
         $cate_product = DB::table('tbl_category_product')->orderby('category_id','desc')->get();
         $brand_product = DB::table('tbl_brand')->orderby('brand_id','desc')->get();
@@ -34,7 +34,7 @@ class ProductController extends Controller
         // dd($all_product);  
 
         $manager_product = view('productmodule::admin.all_product')->with('all_product', $all_product);
-        return view('productmodule::admin')->with('all_product', $manager_product); 
+        return view('admin')->with('all_product', $manager_product); 
     }
 
 
@@ -87,7 +87,7 @@ class ProductController extends Controller
         $manager_product = view('productmodule::admin.edit_product')->with('edit_product', $edit_product)
         ->with('cate_product', $cate_product)
         ->with('brand_product', $brand_product);
-        return view('productmodule::admin')->with('edit_product', $manager_product);
+        return view('admin')->with('edit_product', $manager_product);
     }
 
     public function delete_product($product_id){
