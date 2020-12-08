@@ -74,10 +74,10 @@ _________________________________________________________ -->
                             </div>
 
                             <div class="login">
-                                <a href="#" data-toggle="modal" data-target="#login-modal"><i class="fa fa-sign-in"></i>
-                                    <span class="hidden-xs text-uppercase">Sign in</span></a>
-                                <a href="#"><i class="fa fa-user"></i> <span
-                                        class="hidden-xs text-uppercase">Sign up</span></a>
+                                <a href="{{URL::to('accountmodule/login')}}"><i class="fa fa-sign-in"></i>
+                                    <span class="hidden-xs text-uppercase">Login</span></a>
+                                <a href="{{URL::to('accountmodule/register')}}"><i class="fa fa-user"></i> <span
+                                        class="hidden-xs text-uppercase">Register</span></a>
                             </div>
 
                         </div>
@@ -98,7 +98,7 @@ _________________________________________________________ -->
                         <div class="navbar-header">
 
                             <a class="navbar-brand home" href="index.html">
-                                <img src="{{asset('Order/img/logo.png')}}" alt="Universal logo" class="hidden-xs hidden-sm">
+                                <h3>ENTITITI</h3>
                             </a>   
                         </div>
                         <!--/.navbar-header -->
@@ -157,19 +157,19 @@ _________________________________________________________ -->
         </header>
         <div id="heading-breadcrumbs">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-7">
-                        <h1>Category with left sidebar</h1>
-                    </div>
-                    <div class="col-md-5">
-                        <ul class="breadcrumb">
-                            <li><a href="index.html">Home</a>
-                            </li>
-                            <li>Category with left sidebar</li>
-                        </ul>
+                {{-- <div class="row"> --}}
+                    {{-- <div class="col-md-7"> --}}
+                        {{-- <h1>Category with left sidebar</h1> --}}
+                    {{-- </div> --}}
+                    {{-- <div class="col-md-5"> --}}
+                        {{-- <ul class="breadcrumb"> --}}
+                            {{-- <li><a href="index.html">Home</a> --}}
+                            {{-- </li> --}}
+                            {{-- <li>Category with left sidebar</li> --}}
+                        {{-- </ul> --}}
 
-                    </div>
-                </div>
+                    {{-- </div> --}}
+                {{-- </div> --}}
             </div>
         </div>
 
