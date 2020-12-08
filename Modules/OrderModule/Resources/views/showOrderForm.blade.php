@@ -531,7 +531,7 @@ _________________________________________________________ -->
                                 </div>
                                 <div class="box-footer">
                                     <div class="pull-left">
-                                        <a class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                        <a href="{{URL::to('/productmodule/home')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                                     </div>
                                     <div class="pull-right">
                                         <button type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
