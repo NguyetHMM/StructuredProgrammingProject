@@ -50,14 +50,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- user login dropdown start-->
         <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                <img alt="" src="{{asset('images/2.png')}}">
-                <span class="username">John Doe</span>
+                <img alt="" src="{{asset('images/logo.png')}}">
+			<span class="username">{{Auth::user()->name}}</span>
                 <b class="caret"></b>
             </a>
             <ul class="dropdown-menu extended logout">
-                <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
-                <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
-                <li><a href="login.html"><i class="fa fa-key"></i> Log Out</a></li>
+                <li><a href="{{ route('editUserInfor') }}"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                <li><a href="{{ route('logout') }}"><i class="fa fa-key"></i> Log Out</a></li>
             </ul>
         </li>
         <!-- user login dropdown end -->
@@ -102,6 +101,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li><a href="{{route('all-product')}}">Liệt kê sản phẩm</a></li>
                     </ul>
 				</li>
+
+				<li class="sub-menu">
+                    <a href="{{route('all-user')}}">
+                        <i class="fa fa-book"></i>
+                        <span>Người dùng</span>
+                    </a>
+				</li>
 				
 			</ul>            
 		</div>
@@ -117,7 +123,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
  <!-- footer -->
 		  <div class="footer">
 			<div class="wthree-copyright">
-			  <p>© 2017 Visitors. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+			  <p>© 2020 Visitors. All rights reserved | Design by <a href="https://github.com/NguyetHMM/StructuredProgrammingProject">ENTITITI TEAM</a></p>
 			</div>
 		  </div>
   <!-- / footer -->
