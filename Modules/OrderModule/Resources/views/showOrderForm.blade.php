@@ -473,7 +473,7 @@ _________________________________________________________ -->
 
                 <div class="col-md-9 clearfix" id="customer-order" style="margin-bottom: 30px;">
                         <div class="box">
-                            <form method="post" action="">
+                            <form method="POST" action="{{URL::to('/paymentmodule/checkout')}}">
                             {{ csrf_field() }}
                                 <div class="table-responsive">
                                     <table class="table">
@@ -531,7 +531,7 @@ _________________________________________________________ -->
                                 </div>
                                 <div class="box-footer">
                                     <div class="pull-left">
-                                        <a href="shop-category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                        <a class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                                     </div>
                                     <div class="pull-right">
                                         <button type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
