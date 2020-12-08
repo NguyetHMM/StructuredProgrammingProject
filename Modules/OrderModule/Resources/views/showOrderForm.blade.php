@@ -448,16 +448,14 @@ _________________________________________________________ -->
             <div class="container">
                 <div class="row">
                     <div class="col-md-7">
-                        <h1>Order # 1735</h1>
+                        <h1>Cart Order</h1>
                     </div>
                     <div class="col-md-5">
                         <ul class="breadcrumb">
-
                             <li><a href="index.html">Home</a>
                             </li>
-                            <li><a href="customer-orders.html">My orders</a>
+                            <li><a href="customer-orders.html">Cart Order</a>
                             </li>
-                            <li>Order # 1735</li>
                         </ul>
                     </div>
                 </div>
@@ -473,147 +471,134 @@ _________________________________________________________ -->
                     <!-- *** LEFT COLUMN ***
 			 _________________________________________________________ -->
 
-                    <div class="col-md-12 clearfix" id="customer-order" style="margin-bottom: 30px;">
-
-                        <p class="lead">Order #1735 was placed on <strong>22/06/2013</strong> and is currently <strong>Being prepared</strong>.</p>
+                <div class="col-md-9 clearfix" id="customer-order" style="margin-bottom: 30px;">
                         <div class="box">
+                            <form method="post" action="">
+                            {{ csrf_field() }}
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Product</th>
+                                                <th>Quantity</th>
+                                                <th>Unit price</th>
+                                                <th>Discount</th>
+                                                <th colspan="2">Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                            $total = 0
+                                        ?>
+                                        @foreach ($products as $key => $value)
+                                        <?php
+                                            $total += $value->price*$value->quantity
+                                        ?>
+                                            <tr>
+                                                <td>
+                                                    <a href="">
+                                                        <img src={{asset('Order/images/detailsquare.jpg')}} alt="White Blouse Armani">
+                                                    </a>
+                                                </td>
+                                                <td><a href="">White Blouse Armani</a>
+                                                </td>
+                                                
+                                                <?php $cost = $value->quantity*$value->price ?>
+                                                <td>
+                                                    <input type="number" value="{{$value->quantity}}" class="form-control" min="0">
+                                                </td> 
+                                                <td>${{$value->price}}</td>
+                                                <td>$0.00</td>
+                                                <td>${{$cost}}</td>
+                                                <td><a href=""><i class="fa fa-trash-o"></i></a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                            
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="5"><strong>Total</strong></th>
+                                                <th colspan="2"><strong>${{$total}}</strong></th>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                    {{-- <input style="margin-left: 83%;" type="submit" value="Pay Now"> --}}
+                                </div>
+                                <div class="box-footer">
+                                    <div class="pull-left">
+                                        <a href="shop-category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button class="btn btn-default"><i class="fa fa-refresh"></i> Update cart</button>
+                                        <button type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <!-- /.col-md-9  end-->
+                    <!-- /.col-md-3 start-->
+                    <div class="col-md-3">
+                        <div class="box" id="order-summary">
+                            <div class="box-header">
+                                <h3>Order summary</h3>
+                            </div>
+                            <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
+
                             <div class="table-responsive">
+                                <?php
+                                    $shipandhanding = 10;
+                                    $tax = 0;
+                                    $total2=$shipandhanding+$tax+$total
+                                ?>
                                 <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="2">Product</th>
-                                            <th>Quantity</th>
-                                            <th>Unit price</th>
-                                            <th>Discount</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
                                     <tbody>
                                         <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src={{asset('Order/images/detailsquare.jpg')}} alt="White Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">White Blouse Armani</a>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <a href="">+</a>
-                                                    <input type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                                    <a href="">-</a>
-                                                </div>
-                                            </td>
-                                            <td>$123.00</td>
-                                            <td>$0.00</td>
-                                            <td>$246.00</td>
+                                            <td>Order subtotal</td>
+                                            <th>${{$total}}</th>
                                         </tr>
                                         <tr>
-                                            <td>
-                                                <a href="#">
-                                                    <img src={{asset('Order/images/basketsquare.jpg')}} alt="Black Blouse Armani">
-                                                </a>
-                                            </td>
-                                            <td><a href="#">Black Blouse Armani</a>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <a href="">+</a>
-                                                    <input type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                                    <a href="">-</a>
-                                                </div>
-                                            </td>
-                                            <td>$200.00</td>
-                                            <td>$0.00</td>
-                                            <td>$200.00</td>
+                                            
+                                            <td>Shipping and handling</td>
+                                            <th>${{$shipandhanding}}</th>
+                                        </tr>
+                                        <tr>
+                                            
+                                            <td>Tax</td>
+                                            <th>${{$tax}}</th>
+                                        </tr>
+                                        <tr class="total">
+                                            
+                                            <td>Total</td>
+                                            <th>${{$total2}}</th>
                                         </tr>
                                     </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <th colspan="5" class="text-right">Order subtotal</th>
-                                            <th>$446.00</th>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="5" class="text-right">Shipping and handling</th>
-                                            <th>$10.00</th>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="5" class="text-right">Tax</th>
-                                            <th>$0.00</th>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="5" class="text-right">Total</th>
-                                            <th>$456.00</th>
-                                        </tr>
-                                    </tfoot>
                                 </table>
-                            <input style="margin-left: 83%;" type="submit" value="Pay Now">
                             </div>
-                            <!-- /.table-responsive -->
-                            {{-- <div class="col-sm-8">
-                            </div>
-                            <div class="col-sm-4" style="margin-top: 15px;">
-                                <h3 class="text-uppercase">Shipping address</h3>
-                                <form>
-                                    <h4 >City</h4>
-                                    <input type="text" name="city">
-                                    <h4 style="margin-right:12%;">District</h4>
-                                    <input type="text" name="district">
-                                    <h4 style="margin-right:12%;">Ward</h4>
-                                    <input type="text" name="ward">
-                                    <h4 style="margin-right:12%;">Street</h4>
-                                    <input type="text" name="street"><h4></h4>
-                                    <input type="submit" value="Submit">
-                                </form>
-                            </div> --}}
-                            <!-- /.addresses -->
 
                         </div>
-                        <!-- /.box -->
+
+
+                        <div class="box">
+                            <div class="box-header">
+                                <h4>Coupon code</h4>
+                            </div>
+                            <p class="text-muted">If you have a coupon code, please enter it in the box below.</p>
+                            <form>
+                                <div class="input-group">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-btn"><button class="btn btn-template-main" type="button">
+                                        <i class="fa fa-gift"></i></button></span>
+                                </div>
+                                <!-- /input-group -->
+                            </form>
+                        </div>
 
                     </div>
-                    <!-- /.col-md-9 -->
-
-                    <!-- *** LEFT COLUMN END *** -->
-
-                    <!-- *** RIGHT COLUMN ***
-			 _________________________________________________________ -->
-
-                    <div class="col-md-3">
-                        <!-- *** CUSTOMER MENU ***
- _________________________________________________________ -->
-                        <!-- <div class="panel panel-default sidebar-menu">
-
-                            <div class="panel-heading">
-                                <h3 class="panel-title">Customer section</h3>
-                            </div>
-
-                            <div class="panel-body">
-
-                                <ul class="nav nav-pills nav-stacked">
-                                    <li class="active">
-                                        <a href="customer-orders.html"><i class="fa fa-list"></i> My orders</a>
-                                    </li>
-                                    <li>
-                                        <a href="customer-wishlist.html"><i class="fa fa-heart"></i> My wishlist</a>
-                                    </li>
-                                    <li>
-                                        <a href="customer-account.html"><i class="fa fa-user"></i> My account</a>
-                                    </li>
-                                    <li>
-                                        <a href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div> -->
-                        <!-- /.col-md-3 -->
-
-                        <!-- *** CUSTOMER MENU END *** -->
-                    </div>
-
-                    <!-- *** RIGHT COLUMN END *** -->
-
+                    <!-- /.col-md-3 -->
                 </div>
                 <!-- /.row -->
 
@@ -629,7 +614,7 @@ _________________________________________________________ -->
 
         <footer id="footer">
             <div class="container">
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
                     <h4>About us</h4>
 
                     <p><strong>StructureProgramming Team3.</strong></p>
@@ -656,9 +641,9 @@ _________________________________________________________ -->
                     <hr class="hidden-md hidden-lg hidden-sm">
 
                 </div>
-                <!-- /.col-md-3 -->
+                <!-- /.col-md-4 -->
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
 
                     <h4>Blog</h4>
 
@@ -700,9 +685,9 @@ _________________________________________________________ -->
                     <hr class="hidden-md hidden-lg">
 
                 </div>
-                <!-- /.col-md-3 -->
+                <!-- /.col-md-4 -->
 
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-4 col-sm-6">
 
                     <h4>Contact</h4>
 
@@ -718,49 +703,7 @@ _________________________________________________________ -->
                     <hr class="hidden-md hidden-lg hidden-sm">
 
                 </div>
-                <!-- /.col-md-3 -->
-
-
-
-                <div class="col-md-3 col-sm-6">
-
-                    <h4>Photostream</h4>
-
-                    <div class="photostream">
-                        <div>
-                            <a href="#">
-                                <img src="{{asset('Order/images/detailsquare.jpg')}}" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="{{asset('Order/images/detailsquare2.jpg')}}" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="{{asset('Order/images/detailsquare3.jpg')}}" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="{{asset('Order/images/detailsquare3.jpg')}}" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="{{asset('Order/images/detailsquare2.jpg')}}" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                        <div>
-                            <a href="#">
-                                <img src="{{asset('Order/images/detailsquare.jpg')}}" class="img-responsive" alt="#">
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /.col-md-3 -->
+                
             </div>
             <!-- /.container -->
         </footer>
@@ -781,11 +724,6 @@ _________________________________________________________ -->
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/jquery.parallax-1.1.3.js"></script>
     <script src="js/front.js"></script>
-
-    
-
-
-
 </body>
 
 </html>

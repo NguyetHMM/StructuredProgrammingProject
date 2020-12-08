@@ -530,7 +530,7 @@ _________________________________________________________ -->
                                         <input type="number" id="quantity" name="product_qty" value="1" style="width: 3%;">
                                     </div>
                                     <input type="hidden" value="124" name="price">   
-                                    <input type="hidden" value="1" name="product_id">
+                                    <input type="hidden" value="3" name="product_id">
                                     <!-- <input type="hidden" value="{{asset('')}}">      -->
                                     <p class="price">$124.00</p>
 
