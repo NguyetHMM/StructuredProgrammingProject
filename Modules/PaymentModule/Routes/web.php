@@ -13,5 +13,9 @@
 
 Route::prefix('paymentmodule')->group(function() {
     Route::get('/', 'PaymentModuleController@index');
-    Route::get('/checkout','PaymentModuleController@show')->name('show');
+    // Route::get('/checkout','PaymentModuleController@show')->name('show');
+
+    //Thuc
+    Route::post('/checkout', 'PaymentModuleController@checkout')->name('checkout');
+    Route::get('/checkout','PaymentModuleController@check')->name('check');
 });
