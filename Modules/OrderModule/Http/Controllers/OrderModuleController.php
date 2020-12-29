@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Modules\OrderModule\Entities\OrderDetailModel as OrderDetailModel;
 use Session;
 class OrderModuleController extends Controller
 {
@@ -45,25 +46,32 @@ class OrderModuleController extends Controller
      */
     public function show()
     {
-        
-        return view('ordermodule::showOrderForm');
+        $products = DB::table('order_detail')->get();
+        return view('ordermodule::showOrderForm',compact('products'));
     }
 
     public function addToCart(Request $request)
     {
+        $addQuantity = DB::table('order_detail')->where('product_id',$request->product_id)->get();
         // Handle save to database 
-        $data['product_id'] = $request->product_id;
-        $data['order_id'] = $request->product_id;
-        $data['price'] = $request->price;
-        $data['quantity'] = $request->product_qty;
-        // $data['size'] = $request->size;
-        // $data['user_id']
-        // dd($request);
-        DB::table('order_detail')->insert($data);
-        $data_product = DB::table('order_detail')->where('order_id',$data['order_id'])->get();
-        
-        // return redirect()->action('OrderModuleController@show')->with('data', $data);
-        return view('ordermodule::showOrderForm')->with('products', $data_product);
+        // dd($request->product_qty);
+
+        if($addQuantity[0]->quantity){
+            // $addQuantity = OrderDetailModel::find($check);
+            $qty = $addQuantity[0]->quantity;
+            DB::table('order_detail')
+            ->where('product_id',$request->product_id)
+            ->update(['quantity' => ($qty+$request->product_qty)]);
+            
+        } else{
+            $data['product_id'] = $request->product_id;
+            $data['order_id'] = $request->product_id;
+            $data['price'] = $request->price;
+            $data['quantity'] = $request->product_qty;
+
+            DB::table('order_detail')->insert($data);
+        }
+        return redirect()->action([OrderModuleController:: class,'show']);
     }
 
     public function updateCart(){
