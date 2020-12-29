@@ -18,18 +18,12 @@ class PaymentModuleController extends Controller
         return view('paymentmodule::index');
     }
 
-    public function show()
-    {
-        $data_product = DB::table('order_detail')->where('order_id','1')->get();
-        foreach ($data_product as $value) {
-            
-        }
-        return view('paymentmodule::checkout')->with('products', $data_product);
-    }
+   
 
     public function check(){
-        
-        return view('paymentmodule::shop-checkout');
+        $data_product = DB::table('order_detail')->where('order_id',1)->get();
+
+        return view('paymentmodule::shop-checkout')->with('products', $data_product);
     }
 
     public function checkout(Request $r){
