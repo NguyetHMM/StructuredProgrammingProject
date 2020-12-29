@@ -46,7 +46,10 @@ class OrderModuleController extends Controller
      */
     public function show()
     {
-        $products = DB::table('order_detail')->get();
+        $products = DB::table('order_detail')
+        ->join('tbl_product','tbl_product.product_id','=','order_detail.product_id')
+        ->get();
+        // dd($products);
         return view('ordermodule::showOrderForm',compact('products'));
     }
 
@@ -55,8 +58,9 @@ class OrderModuleController extends Controller
         $addQuantity = DB::table('order_detail')->where('product_id',$request->product_id)->get();
         // Handle save to database 
         // dd($request->product_qty);
-
-        if($addQuantity[0]->quantity){
+        $count = count($addQuantity);
+        // dd($count);
+        if($count != 0){
             // $addQuantity = OrderDetailModel::find($check);
             $qty = $addQuantity[0]->quantity;
             DB::table('order_detail')
@@ -79,6 +83,7 @@ class OrderModuleController extends Controller
     }
     public function show_detail($product_id){
         $product = DB::table('tbl_product')->where('product_id',$product_id)->get();
+        // dd($product);
         return view('ordermodule::productDetail')->with('show_detail', $product);
     }
 

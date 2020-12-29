@@ -17,5 +17,5 @@ Route::prefix('paymentmodule')->group(function() {
 
     //Thuc
     Route::post('/checkout', 'PaymentModuleController@checkout')->name('checkout');
-    Route::get('/checkout','PaymentModuleController@check')->name('check');
+    Route::get('/show-payment','PaymentModuleController@show')->name('show-pay');
 });

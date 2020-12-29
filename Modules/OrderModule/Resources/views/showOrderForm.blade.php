@@ -15,20 +15,28 @@
                     <div class="row">
                         <div class="col-xs-5 contact">
                             <p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
-                            <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>  <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                            <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i
+                                        class="fa fa-phone"></i></a> <a href="#" data-animate-hover="pulse"><i
+                                        class="fa fa-envelope"></i></a>
                             </p>
                         </div>
                         <div class="col-xs-7">
                             <div class="social">
-                                <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="external facebook" data-animate-hover="pulse"><i
+                                        class="fa fa-facebook"></i></a>
+                                <a href="#" class="external gplus" data-animate-hover="pulse"><i
+                                        class="fa fa-google-plus"></i></a>
+                                <a href="#" class="external twitter" data-animate-hover="pulse"><i
+                                        class="fa fa-twitter"></i></a>
                                 <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                             </div>
 
                             <div class="login">
-                                <a href="{{URL::to('/accountmodule/login')}}" data-toggle="modal" ><i class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign in</span></a>
-                                <a href="{{URL::to('/accountmodule/register')}}"><i class="fa fa-user"></i> <span class="hidden-xs text-uppercase">Sign up</span></a>
+                                <a href="{{URL::to('/accountmodule/login')}}" data-toggle="modal"><i
+                                        class="fa fa-sign-in"></i> <span class="hidden-xs text-uppercase">Sign
+                                        in</span></a>
+                                <a href="{{URL::to('/accountmodule/register')}}"><i class="fa fa-user"></i> <span
+                                        class="hidden-xs text-uppercase">Sign up</span></a>
                             </div>
 
                         </div>
@@ -48,11 +56,15 @@
                         <div class="navbar-header">
 
                             <a class="navbar-brand home" href="{{route('index-2')}}">
-                                <img src="{{asset('Order/images/logo.png')}}" alt="Universal logo" class="hidden-xs hidden-sm">
-                                <img src="{{asset('Order/images/logo-small.png')}}" alt="Universal logo" class="visible-xs visible-sm"><span class="sr-only">Universal - go to homepage</span>
+                                <img src="{{asset('Order/images/logo.png')}}" alt="Universal logo"
+                                    class="hidden-xs hidden-sm">
+                                <img src="{{asset('Order/images/logo-small.png')}}" alt="Universal logo"
+                                    class="visible-xs visible-sm"><span class="sr-only">Universal - go to
+                                    homepage</span>
                             </a>
                             <div class="navbar-buttons">
-                                <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
+                                <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse"
+                                    data-target="#navigation">
                                     <span class="sr-only">Toggle navigation</span>
                                     <i class="fa fa-align-justify"></i>
                                 </button>
@@ -64,7 +76,8 @@
 
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="dropdown active">
-                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Home <b class="caret"></b></a>
+                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Home <b
+                                            class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="index.html">Option 1: Default Page</a>
                                         </li>
@@ -79,13 +92,15 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown use-yamm yamm-fw">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features<b
+                                            class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img src="{{asset('Order/images/template-easy-customize.png')}}" class="img-responsive hidden-xs" alt="">
+                                                        <img src="{{asset('Order/images/template-easy-customize.png')}}"
+                                                            class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <h5>Shortcodes</h5>
@@ -111,9 +126,11 @@
                                                     <div class="col-sm-3">
                                                         <h5>Header variations</h5>
                                                         <ul>
-                                                            <li><a href="template-header-default.html">Default sticky header</a>
+                                                            <li><a href="template-header-default.html">Default sticky
+                                                                    header</a>
                                                             </li>
-                                                            <li><a href="template-header-nosticky.html">No sticky header</a>
+                                                            <li><a href="template-header-nosticky.html">No sticky
+                                                                    header</a>
                                                             </li>
                                                             <li><a href="template-header-light.html">Light header</a>
                                                             </li>
@@ -125,32 +142,38 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown use-yamm yamm-fw">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Portfolio <b
+                                            class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="yamm-content">
                                                 <div class="row">
                                                     <div class="col-sm-6">
-                                                        <img src="{{asset('Order/images/template-homepage.png')}}" class="img-responsive hidden-xs" alt="">
+                                                        <img src="{{asset('Order/images/template-homepage.png')}}"
+                                                            class="img-responsive hidden-xs" alt="">
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <h5>Portfolio</h5>
                                                         <ul>
                                                             <li><a href="portfolio-2.html">2 columns</a>
                                                             </li>
-                                                            <li><a href="portfolio-no-space-2.html">2 columns with negative space</a>
+                                                            <li><a href="portfolio-no-space-2.html">2 columns with
+                                                                    negative space</a>
                                                             </li>
                                                             <li><a href="portfolio-3.html">3 columns</a>
                                                             </li>
-                                                            <li><a href="portfolio-no-space-3.html">3 columns with negative space</a>
+                                                            <li><a href="portfolio-no-space-3.html">3 columns with
+                                                                    negative space</a>
                                                             </li>
                                                             <li><a href="portfolio-4.html">4 columns</a>
                                                             </li>
-                                                            <li><a href="portfolio-no-space-4.html">4 columns with negative space</a>
+                                                            <li><a href="portfolio-no-space-4.html">4 columns with
+                                                                    negative space</a>
                                                             </li>
                                                             <li><a href="portfolio-detail.html">Portfolio - detail</a>
                                                             </li>
-                                                            <li><a href="portfolio-detail-2.html">Portfolio - detail 2</a>
+                                                            <li><a href="portfolio-detail-2.html">Portfolio - detail
+                                                                    2</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -179,7 +202,8 @@
                                 </li>
                                 <!-- ========== FULL WIDTH MEGAMENU ================== -->
                                 <li class="dropdown use-yamm yamm-fw">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">All Pages <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                                        data-delay="200">All Pages <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li>
                                             <div class="yamm-content">
@@ -220,19 +244,23 @@
                                                         <ul>
                                                             <li><a href="portfolio-2.html">2 columns</a>
                                                             </li>
-                                                            <li><a href="portfolio-no-space-2.html">2 columns with negative space</a>
+                                                            <li><a href="portfolio-no-space-2.html">2 columns with
+                                                                    negative space</a>
                                                             </li>
                                                             <li><a href="portfolio-3.html">3 columns</a>
                                                             </li>
-                                                            <li><a href="portfolio-no-space-3.html">3 columns with negative space</a>
+                                                            <li><a href="portfolio-no-space-3.html">3 columns with
+                                                                    negative space</a>
                                                             </li>
                                                             <li><a href="portfolio-4.html">4 columns</a>
                                                             </li>
-                                                            <li><a href="portfolio-no-space-4.html">4 columns with negative space</a>
+                                                            <li><a href="portfolio-no-space-4.html">4 columns with
+                                                                    negative space</a>
                                                             </li>
                                                             <li><a href="portfolio-detail.html">Portfolio - detail</a>
                                                             </li>
-                                                            <li><a href="portfolio-detail-2.html">Portfolio - detail 2</a>
+                                                            <li><a href="portfolio-detail-2.html">Portfolio - detail
+                                                                    2</a>
                                                             </li>
                                                         </ul>
                                                         <h5>User pages</h5>
@@ -245,18 +273,22 @@
                                                             </li>
                                                             <li><a href="customer-wishlist.html">Wishlist</a>
                                                             </li>
-                                                            <li><a href="customer-account.html">Customer account / change password</a>
+                                                            <li><a href="customer-account.html">Customer account /
+                                                                    change password</a>
                                                             </li>
                                                         </ul>
                                                     </div>
                                                     <div class="col-sm-3">
                                                         <h5>Shop</h5>
                                                         <ul>
-                                                            <li><a href="shop-category.html">Category - sidebar right</a>
+                                                            <li><a href="shop-category.html">Category - sidebar
+                                                                    right</a>
                                                             </li>
-                                                            <li><a href="shop-category-left.html">Category - sidebar left</a>
+                                                            <li><a href="shop-category-left.html">Category - sidebar
+                                                                    left</a>
                                                             </li>
-                                                            <li><a href="shop-category-full.html">Category - full width</a>
+                                                            <li><a href="shop-category-full.html">Category - full
+                                                                    width</a>
                                                             </li>
                                                             <li><a href="shop-detail.html">Product detail</a>
                                                             </li>
@@ -319,7 +351,8 @@
                                 <!-- ========== FULL WIDTH MEGAMENU END ================== -->
 
                                 <li class="dropdown">
-                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+                                    <a href="javascript: void(0)" class="dropdown-toggle" data-toggle="dropdown">Contact
+                                        <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="contact.html">Contact option 1</a>
                                         </li>
@@ -344,9 +377,10 @@
                                     <input type="text" class="form-control" placeholder="Search">
                                     <span class="input-group-btn">
 
-                    <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+                                        <button type="submit" class="btn btn-template-main"><i
+                                                class="fa fa-search"></i></button>
 
-                </span>
+                                    </span>
                                 </div>
                             </form>
 
@@ -365,7 +399,8 @@
 
         </header>
 
-        {{-- <!-- *** LOGIN MODAL ***-->
+        {{--
+        <!-- *** LOGIN MODAL ***-->
 
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
             <div class="modal-dialog modal-sm">
@@ -391,7 +426,9 @@
                         </form>
 
                         <p class="text-center text-muted">Not registered yet?</p>
-                        <p class="text-center text-muted"><a href="customer-register.html"><strong>Register now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to special discounts and much more!</p>
+                        <p class="text-center text-muted"><a href="customer-register.html"><strong>Register
+                                    now</strong></a>! It is easy and done in 1&nbsp;minute and gives you access to
+                            special discounts and much more!</p>
 
                     </div>
                 </div>
@@ -425,12 +462,12 @@
                 <div class="row">
 
                     <!-- *** LEFT COLUMN ***
-			 _________________________________________________________ -->
+			        _________________________________________________________ -->
 
-                <div class="col-md-9 clearfix" id="customer-order" style="margin-bottom: 30px;">
+                    <div class="col-md-12 clearfix" id="customer-order" style="margin-bottom: 30px;">
                         <div class="box">
-                            <form method="POST" action="{{route('checkout')}}">
-                            {{ csrf_field() }}
+                            <form method="post" action="{{route('checkout')}}">
+                                {{ csrf_field() }}
                                 <div class="table-responsive">
                                     <table class="table">
                                         <thead>
@@ -443,13 +480,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php
+                                            <?php
                                             $total = 0;
                                             $countProduct = 0;
                                             $totalOrder = 0
                                         ?>
-                                        @foreach ($products as $key => $value)
-                                        <?php
+                                            @foreach ($products as $key => $value)
+                                            <?php
                                             $countProduct+=1;
                                             $total += $value->price*$value->quantity;
                                             $totalOrder+=$total;
@@ -457,24 +494,28 @@
                                             <tr>
                                                 <td>
                                                     <a href="">
-                                                        <img src={{asset('Order/images/detailsquare.jpg')}} alt="White Blouse Armani">
+                                                        <img src={{asset('Order/images/detailsquare.jpg')}}
+                                                            alt="White Blouse Armani">
                                                     </a>
                                                 </td>
-                                                <td><a href="">White Blouse Armani</a>
+                                                <td><a href="">{{$value->product_name}}</a>
                                                 </td>
-                                                
-                                                <?php $cost = $value->quantity*$value->price ?>
+
+                                                <?php $cost = ($value->quantity)*($value->price) ?>
                                                 <td>
-                                                    <input id="quantity" name="quantity" type="number" value="{{$value->quantity}}" class="{{"form-control number_select" . $key}}" min="0" >
-                                                </td> 
+                                                    <input id="quantity" name="quantity" .{{$key+1}} type="number"
+                                                        value="{{$value->quantity}}" class="{{" form-control
+                                                        number_select" . $key}}" min="0">
+                                                </td>
                                                 <td id="{{'product-price'.$key}}">{{$value->price}}</td>
                                                 <td>$0.00</td>
-                                                <td id="{{'cost-product'.$key}}">{{$total}}</td>
+                                                <td id="{{'cost-product'.$key}}">{{$cost}}</td>
                                                 <td><a href=""><i class="fa fa-trash-o"></i></a>
+                                                    
                                                 </td>
                                             </tr>
                                             @endforeach
-                                            
+                                            <input type="hidden" value="{{$totalOrder}}" id="total" name="total">
                                         </tbody>
                                         <tfoot>
                                             <tr>
@@ -483,14 +524,17 @@
                                             </tr>
                                         </tfoot>
                                     </table>
+
                                     {{-- <input style="margin-left: 83%;" type="submit" value="Pay Now"> --}}
                                 </div>
                                 <div class="box-footer">
                                     <div class="pull-left">
-                                        <a href="{{URL::to('/productmodule/home')}}" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                                        <a href="{{URL::to('/productmodule/home')}}" class="btn btn-default"><i
+                                                class="fa fa-chevron-left"></i> Continue shopping</a>
                                     </div>
                                     <div class="pull-right">
-                                        <button type="submit" class="btn btn-template-main">Proceed to checkout <i class="fa fa-chevron-right"></i>
+                                        <button type="submit" class="btn btn-template-main">Proceed to checkout <i
+                                                class="fa fa-chevron-right"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -499,77 +543,14 @@
 
                     </div>
                     <!-- /.col-md-9  end-->
-                    <!-- /.col-md-3 start-->
-                    <div class="col-md-3">
-                        <div class="box" id="order-summary">
-                            <div class="box-header">
-                                <h3>Order summary</h3>
-                            </div>
-                            <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
-
-                            <div class="table-responsive">
-                                <?php
-                                    $shipandhanding = 10;
-                                    $tax = 0;
-                                    $total2=$shipandhanding+$tax+$totalOrder
-                                ?>
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td>Order subtotal</td>
-                                            <th>{{$totalOrder}}</th>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td>Shipping and handling</td>
-                                            <th>{{$shipandhanding}}</th>
-                                        </tr>
-                                        <tr>
-                                            
-                                            <td>Tax</td>
-                                            <th>{{$tax}}</th>
-                                        </tr>
-                                        <tr class="total">
-                                            
-                                            <td>Total</td>
-                                            <th id="total-summary">{{$total2}}</th>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
-
-
-                        <div class="box">
-                            <div class="box-header">
-                                <h4>Coupon code</h4>
-                            </div>
-                            <p class="text-muted">If you have a coupon code, please enter it in the box below.</p>
-                            <form>
-                                <div class="input-group">
-                                    <input type="text" class="form-control">
-                                    <span class="input-group-btn"><button class="btn btn-template-main" type="button">
-                                        <i class="fa fa-gift"></i></button></span>
-                                </div>
-                                <!-- /input-group -->
-                            </form>
-                        </div>
-
-                    </div>
-                    <!-- /.col-md-3 -->
+                    
                 </div>
                 <!-- /.row -->
-
-
             </div>
             <!-- /.container -->
         </div>
         <!-- /#content -->
-
-
         <!-- *** FOOTER *** -->
-
         <footer id="footer">
             <div class="container">
                 <div class="col-md-4 col-sm-6">
@@ -588,9 +569,9 @@
 
                             <span class="input-group-btn">
 
-                        <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
+                                <button class="btn btn-default" type="button"><i class="fa fa-send"></i></button>
 
-                    </span>
+                            </span>
 
                         </div>
                         <!-- /input-group -->
@@ -661,29 +642,29 @@
                     <hr class="hidden-md hidden-lg hidden-sm">
 
                 </div>
-                
+
             </div>
             <!-- /.container -->
         </footer>
         <!-- /#footer -->
 
         <!-- *** FOOTER END *** -->
-        
-    <!-- #### JAVASCRIPT FILES ### -->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script>
-        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
-    </script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <!-- #### JAVASCRIPT FILES ### -->
 
-    <script src="{{asset('Order/js/jquery.cookie.js')}}"></script>
-    <script src="{{asset('Order/js/waypoints.min.js')}}"></script>
-    <script src="{{asset('Order/js/jquery.counterup.min.js')}}"></script>
-    <script src="{{asset('Order/js/jquery.parallax-1.1.3.js')}}"></script>
-    <script src="{{asset('Order/js/front.js')}}"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>
+            window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+        </script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
-    <script>
+        <script src="{{asset('Order/js/jquery.cookie.js')}}"></script>
+        <script src="{{asset('Order/js/waypoints.min.js')}}"></script>
+        <script src="{{asset('Order/js/jquery.counterup.min.js')}}"></script>
+        <script src="{{asset('Order/js/jquery.parallax-1.1.3.js')}}"></script>
+        <script src="{{asset('Order/js/front.js')}}"></script>
+
+        <script>
          $(function() {
             $(':input[type="number"]').click(function () {
                 
@@ -697,10 +678,7 @@
                 console.log(product_number);
                 
                 $('#totalOrder').html(totalOrder);
-                var tax = '<?php echo $tax?>';
-                var shipandhanding = '<?php echo $shipandhanding?>';
-                var totalSummary = tax+shipandhanding;
-                $('#total-summary').html(totalSummary);
+                
             });
         });
 	</script>

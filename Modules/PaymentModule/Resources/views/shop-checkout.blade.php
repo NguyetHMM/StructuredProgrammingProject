@@ -106,16 +106,9 @@
                                         $cost_cart = 0;
                                         $ship=30000
 						                ?>
-						                @foreach ($products as $val)
-						                 <?php 
-						                 	$total = $val->price * $val->quantity;
-						                	$cost_cart += $total
-                                         ?>
-                                        @endforeach
-
                                         <tr>
                                             <td>Order subtotal</td>
-                                            <th>{{$cost_cart}}</th>
+                                            <th>{{$products[0]->total}}</th>
                                             
                                         </tr>
                                         <tr>
