@@ -5,6 +5,7 @@ namespace Modules\PaymentModule\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\DB;
 
 class PaymentModuleController extends Controller
 {
@@ -43,7 +44,11 @@ class PaymentModuleController extends Controller
      */
     public function show()
     {
-        return view('paymentmodule::checkout');
+        $data_product = DB::table('order_detail')->where('order_id','1')->get();
+        foreach ($data_product as $value) {
+            
+        }
+        return view('paymentmodule::checkout')->with('products', $data_product);
     }
 
     /**

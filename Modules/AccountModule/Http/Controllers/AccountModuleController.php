@@ -61,7 +61,7 @@ class AccountModuleController extends Controller
             }
         }
 
-        return redirect()->route('login')->with('error', 'Oppes! You have entered invalid credentials');
+        return redirect()->route('main')->with('error', 'Oppes! You have entered invalid credentials');
     }
 
     public function editUserInfor(){

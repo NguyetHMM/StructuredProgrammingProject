@@ -45,22 +45,24 @@ class OrderModuleController extends Controller
      */
     public function show()
     {
+        
         return view('ordermodule::showOrderForm');
     }
 
     public function addToCart(Request $request)
     {
         // Handle save to database 
-        $data_product = DB::table('order_detail')->where('order_id','1')->get();
-        // $data['product_id'] = $request->product_id;
-        // $data['order_id'] = $request->product_id;
-        // $data['price'] = $request->price;
-        // $data['quantity'] = $request->product_qty;
+        $data['product_id'] = $request->product_id;
+        $data['order_id'] = $request->product_id;
+        $data['price'] = $request->price;
+        $data['quantity'] = $request->product_qty;
         // $data['size'] = $request->size;
-        // dd($data);
-        // foreach($data_product as $data1){
-        //     dd($data1->quantity);
-        // }
+        // $data['user_id']
+        // dd($request);
+        DB::table('order_detail')->insert($data);
+        $data_product = DB::table('order_detail')->where('order_id',$data['order_id'])->get();
+        
+        // return redirect()->action('OrderModuleController@show')->with('data', $data);
         return view('ordermodule::showOrderForm')->with('products', $data_product);
     }
 
