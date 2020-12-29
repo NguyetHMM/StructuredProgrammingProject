@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1>Website E-commerce</h1>
+                    <h1>PAYMENT MODULE</h1>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
                                         <a href="#" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
                                     </div>
                                     <div class="pull-right">
-                                        <button type="submit" class="btn btn-template-main">Continue to Delivery Method<i class="fa fa-chevron-right"></i>
+                                        <button type="submit" class="btn btn-template-main">Purchase Confirmation<i class="fa fa-chevron-right"></i>
                                         </button>
                                     </div>
                                 </div>
