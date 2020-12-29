@@ -92,9 +92,10 @@
 
                     <div class="row products">
                         @foreach ($all_product as $key => $pro)
+                        
                             <div class="col-md-4 col-sm-6">
                                 <div class="product">
-                                    <div class="image">
+                                    <div class="" style="height:200px; width:200px;"> <!-- da xoa class="image"-->
                                         <a href="{{ URL::to('ordermodule/productDetail/' . $pro->product_id) }}">
                                             <img src="{{ asset('storage/images/' . $pro->product_image) }}" alt=""
                                                 class="img-responsive image1">
