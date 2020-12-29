@@ -365,7 +365,7 @@
 
         </header>
 
-        <!-- *** LOGIN MODAL ***-->
+        {{-- <!-- *** LOGIN MODAL ***-->
 
         <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
             <div class="modal-dialog modal-sm">
@@ -398,7 +398,7 @@
             </div>
         </div>
 
-        <!-- *** LOGIN MODAL END *** -->
+        <!-- *** LOGIN MODAL END *** --> --}}
 
         <div id="heading-breadcrumbs">
             <div class="container">
@@ -568,8 +568,7 @@
         <!-- /#content -->
 
 
-        <!-- *** FOOTER ***
-_________________________________________________________ -->
+        <!-- *** FOOTER *** -->
 
         <footer id="footer">
             <div class="container">
