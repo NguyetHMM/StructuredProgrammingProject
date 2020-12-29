@@ -429,7 +429,7 @@
 
                 <div class="col-md-9 clearfix" id="customer-order" style="margin-bottom: 30px;">
                         <div class="box">
-                            <form method="POST" action="{{URL::to('/paymentmodule/checkout')}}">
+                            <form method="POST" action="{{route('checkout')}}">
                             {{ csrf_field() }}
                                 <div class="table-responsive">
                                     <table class="table">
@@ -465,7 +465,7 @@
                                                 
                                                 <?php $cost = $value->quantity*$value->price ?>
                                                 <td>
-                                                    <input type="number" value="{{$value->quantity}}" class="{{"form-control number_select" . $key}}" min="0" >
+                                                    <input id="quantity" name="quantity" type="number" value="{{$value->quantity}}" class="{{"form-control number_select" . $key}}" min="0" >
                                                 </td> 
                                                 <td id="{{'product-price'.$key}}">{{$value->price}}</td>
                                                 <td>$0.00</td>
