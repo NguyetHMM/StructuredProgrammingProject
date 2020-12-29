@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <h1>Website E-commerce</h1>
+                    <h1>PAYMENT MODULE</h1>
                 </div>
             </div>
         </div>
