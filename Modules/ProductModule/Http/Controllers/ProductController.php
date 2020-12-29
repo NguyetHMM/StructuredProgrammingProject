@@ -8,6 +8,9 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Session;
+use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Storage;
+
 
 class ProductController extends Controller
 {
@@ -39,6 +42,10 @@ class ProductController extends Controller
 
 
     public function save_product(Request $request){
+        $request->validate([
+            'product_image' => 'required|image'
+        ]);
+
         $data = array();
         $data['product_name'] = $request->product_name;
         $data['product_price'] = $request->product_price;
@@ -48,23 +55,15 @@ class ProductController extends Controller
         $data['brand_id'] = $request->product_brand;
         $data['product_status'] = $request->product_status;
 
-        $get_image = $request->file('product_image');
+        // $get_image = $request->file('product_image');
         
-        if($get_image){
-            $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.', $get_name_image));
-            $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('products', $new_image);
-            $data['product_image'] = $new_image;
-            DB::table('tbl_product')->insert($data);
-            Session::put('message','Thêm sản phẩm thành công');
-            return \redirect()->action([ProductController::class, 'all_product']);
-        }else{
-            $data['product_image'] = '';
-            DB::table('tbl_product')->insert($data);
-            Session::put('message','Thêm sản phẩm thành công');
-            return \redirect()->action([ProductController::class, 'all_product']);
-        }
+        $request->product_image->store('images','public');
+        $fileName = $request->file('product_image')->hashName(); 
+        
+        $data['product_image'] = $fileName;
+        DB::table('tbl_product')->insert($data);
+        Session::put('message','Thêm sản phẩm thành công');
+        return \redirect()->action([ProductController::class, 'all_product']);
     }
 
     public function unactive_product($product_id){
@@ -91,6 +90,8 @@ class ProductController extends Controller
     }
 
     public function delete_product($product_id){
+        $image = DB::table('tbl_product')->where('product_id', $product_id)->select('product_image')->get();
+        Storage::delete('/public/images/'.$image[0]->product_image);
         DB::table('tbl_product')->where('product_id', $product_id)->delete();
         Session::put('message','Xóa sản phẩm thành công');
         return \redirect()->action([ProductController::class, 'all_product']);
@@ -105,24 +106,19 @@ class ProductController extends Controller
         $data['category_id'] = $request->product_cate;
         $data['brand_id'] = $request->product_brand;
         $data['product_status'] = $request->product_status;
+        $image = DB::table('tbl_product')->where('product_id', $product_id)->select('product_image')->get();
+        if($request->product_image){
+            Storage::delete('/public/images/'.$image[0]->product_image);
+            $request->product_image->store('images','public');
+            $fileName = $request->file('product_image')->hashName();
+            $data['product_image'] = $fileName;
 
-        $get_image = $request->file('product_image');
-        
-        if($get_image){
-            $get_name_image = $get_image->getClientOriginalName();
-            $name_image = current(explode('.', $get_name_image));
-            $new_image = $name_image.rand(0,999).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('products', $new_image);
-            $data['product_image'] = $new_image;
-            DB::table('tbl_product')->where('product_id', $product_id)->update($data);
-            Session::put('message','Cập nhật sản phẩm thành công');
-            return \redirect()->action([ProductController::class, 'all_product']);
-        }else{
-            $data['product_image'] = '';
-            DB::table('tbl_product')->where('product_id', $product_id)->update($data);
-            Session::put('message','Cập nhật sản phẩm thành công');
-            return \redirect()->action([ProductController::class, 'all_product']);
         }
+        // dd($image[0]->product_image);
+        DB::table('tbl_product')->where('product_id', $product_id)->update($data);
+        Session::put('message','Cập nhật sản phẩm thành công');
+        return \redirect()->action([ProductController::class, 'all_product']);
+        
     }
 
 }

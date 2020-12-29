@@ -58,7 +58,7 @@
                     <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
                     <td>{{ $pro->product_name }}</td>
                     <td>{{ $pro->product_price }}</td>
-                    <td><img style="width: 100px; height: 70px" src = "{{ asset('products/'.$pro->product_image) }}"></td>
+                    <td><img style="width: 100px; height: 70px" src = "{{ asset('storage/images/'.$pro->product_image) }}"></td>
                     <td>{{ $pro->category_name }}</td>
                     <td>{{ $pro->brand_name }}</td>
                     <td><span class="text-ellipsis">
