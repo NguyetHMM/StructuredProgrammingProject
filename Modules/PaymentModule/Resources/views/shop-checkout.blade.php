@@ -22,28 +22,28 @@
                             <form method="post" action="shop-checkout2.html">
 
                                 <ul class="nav nav-pills nav-justified">
-                                    <li class="active"><a href="#"><i class="fa fa-map-marker"></i><br>Address</a>
+                                    <li class="active"><a href="#"><!--<i class="fa fa-map-marker">--></i><br>Payment</a>
                                     </li>
-                                    <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
+                                    {{-- <li class="disabled"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
                                     </li>
                                     <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
                                     </li>
                                     <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
-                                    </li>
+                                    </li> --}}
                                 </ul>
 
                                 <div class="content">
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="firstname">Firstname</label>
-                                                <input type="text" class="form-control" id="firstname" required>
+                                                <label for="firstname"></label>
+                                                <input type="text" class="form-control" placeholder="Frist Name" id="firstname" required>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="lastname">Lastname</label>
-                                                <input type="text" class="form-control" id="lastname" required>
+                                                <label for="lastname"></label>
+                                                <input type="text" class="form-control" placeholder="Last Name" id="lastname" required>
                                             </div>
                                         </div>
                                     </div>
@@ -52,8 +52,8 @@
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label for="street">Address</label>
-                                                <input type="text" class="form-control" id="street" required>
+                                                <label for="street"></label>
+                                                <input type="text" class="form-control" placeholder="Address" id="street" required>
                                             </div>
                                         </div>
                                     </div>
@@ -61,19 +61,19 @@
                                     <div class="row">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="email">Email</label>
-                                                <input type="text" class="form-control" id="email" required>
+                                                <label for="email"></label>
+                                                <input type="text" class="form-control" placeholder="Email" id="email" required>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="phone_num">Phone number</label>
-                                                <input type="text" class="form-control" id="phone_num" required>
+                                                <label for="phone_num"></label>
+                                                <input type="text" class="form-control" placeholder="Phone number" id="phone_num" required>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                
                                 <div class="box-footer">
                                     <div class="pull-left">
                                         <a href="#" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
@@ -87,8 +87,8 @@
                         </div>
                         <!-- /.box -->
 
-
                     </div>
+                
                     <!-- /.col-md-9 -->
 
                     <div class="col-md-3">
@@ -98,25 +98,37 @@
                                 <h3>Order summary</h3>
                             </div>
                             <p class="text-muted">Shipping and additional costs are calculated based on the values you have entered.</p>
-
+                                       
                             <div class="table-responsive">
                                 <table class="table">
                                     <tbody>
+                                        <?php
+                                        $cost_cart = 0;
+                                        $ship=30000
+						                ?>
+						                @foreach ($products as $val)
+						                 <?php 
+						                 	$total = $val->price * $val->quantity;
+						                	$cost_cart += $total
+                                         ?>
+                                        @endforeach
+
                                         <tr>
                                             <td>Order subtotal</td>
-                                            <th>$446.00</th>
+                                            <th>{{$cost_cart}}</th>
+                                            
                                         </tr>
                                         <tr>
-                                            <td>Shipping and handling</td>
-                                            <th>$10.00</th>
+                                            <td>Delivery Money</td>
+                                            <th>{{$ship}}</th>
                                         </tr>
-                                        <tr>
-                                            <td>Tax</td>
-                                            <th>$0.00</th>
-                                        </tr>
-                                        <tr class="total">
-                                            <td>Total</td>
-                                            <th>$456.00</th>
+                                        <?php
+                                        $total=$cost_cart + $ship
+						                ?>
+                                        
+                                        <tr class="Total">
+                                            <td>Total Money</td>
+                                            <th>{{$total}}</th>
                                         </tr>
                                     </tbody>
                                 </table>
