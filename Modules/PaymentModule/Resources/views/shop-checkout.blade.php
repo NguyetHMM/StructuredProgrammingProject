@@ -79,7 +79,7 @@
                                         <a href="#" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to basket</a>
                                     </div>
                                     <div class="pull-right">
-                                        <button type="submit" class="btn btn-template-main">Continue to Delivery Method<i class="fa fa-chevron-right"></i>
+                                        <button type="submit" class="btn btn-template-main">Purchase Confirmation<i class="fa fa-chevron-right"></i>
                                         </button>
                                     </div>
                                 </div>
